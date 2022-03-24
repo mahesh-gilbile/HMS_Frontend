@@ -1,0 +1,8 @@
+.flexContainer{
+  display:flex;
+  flex-direction: row;
+}
+
+.buttonDiv{
+  text-align: center;
+}

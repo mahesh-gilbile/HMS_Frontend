@@ -1,0 +1,15 @@
+<div class="main-container">
+  <h3>Scan QR Code</h3>
+  <div>
+    <button (click)="startScan()" *ngIf="!scanActive" class="btn btn-success">Start Scan</button>
+    <button (click)="resetScan()" *ngIf="scanResult" class="btn btn-secondary">Reset Scan</button>
+    <button (click)="stopScan()" *ngIf="scanActive" class="btn btn-danger">Stop Scan</button>
+  </div>
+  <div class="lastDiv">
+    <video #video [hidden]="!scanActive" width="250px"></video>
+    <canvas #canvas hidden></canvas>
+  </div>
+  <div *ngIf="scanResult">
+    Message : - {{ scanResult }}
+  </div>
+</div>

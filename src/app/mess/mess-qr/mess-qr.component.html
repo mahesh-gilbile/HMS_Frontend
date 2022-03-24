@@ -1,0 +1,18 @@
+<mat-card class="main-mat-card">
+  <mat-card class="mat-card-1">
+    <div class="header">
+      <div>{{ date }}</div>
+      <div>{{ day }}</div>
+    </div>
+    <button class="btn btn-success" *ngIf="!startDayStatus && !createQRStatus" (click)="startYourDay()">Start Your Day</button>
+    <button class="btn btn-success" *ngIf="startDayStatus && !createQRStatus" (click)="generateQRCode()">Generate QR Code For Mess</button>
+    <button class="btn btn-danger" *ngIf="createQRStatus" (click)="closeQR()">Close</button>
+    <p class="errorMessage" *ngIf="errorMessage">{{ errorMessage }}</p>
+    <div *ngIf="createQRStatus" class="QrCode">
+      <qr-code [value]="qrData" [size]="width" [level]="level"></qr-code>
+    </div>
+  </mat-card>
+  <mat-card class="mat-card-2">
+    <p>Today's History</p>
+  </mat-card>
+</mat-card>

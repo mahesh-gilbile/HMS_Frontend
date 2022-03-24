@@ -1,0 +1,22 @@
+.main-container{
+  margin: auto;
+  width: 500px;
+  text-align: center;
+}
+
+
+button{
+  margin: 10px;
+}
+
+.lastDiv{
+  margin: 10px;
+  text-align: center;
+}
+
+@media only screen and (min-width:300px) and (max-width:600px){
+  .main-container{
+    width: 95%;
+    margin: auto;
+  }
+}

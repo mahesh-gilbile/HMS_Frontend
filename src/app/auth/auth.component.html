@@ -1,0 +1,13 @@
+<div class="mainDiv">
+<mat-card>
+  <form (ngSubmit)="Submit(f)" #f="ngForm">
+    <input type="text" class="form-control" #required [(ngModel)]="username" placeholder="Username" [ngModelOptions]="{standalone: true}">
+    <input type="password" class="form-control" #required [(ngModel)]="password" placeholder="Password" [ngModelOptions]="{standalone: true}">
+    <select class="form-control" #required [(ngModel)]="selectedOption" [ngModelOptions]="{standalone: true}">
+      <option disabled selected>Select</option>
+      <option *ngFor="let l of login" [value]="l">{{l}}</option>
+    </select>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</mat-card>
+</div>

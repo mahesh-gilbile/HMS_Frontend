@@ -1,0 +1,55 @@
+<div *ngIf="mobile">
+  <mat-card class="main-mat-card">
+  <mat-card class="left-mat-card col-md-8">
+    <div class="bg-image" style="background-image: url(assets/Logo/Student/Mess/Mess.png);">
+      <div class="div1">
+        <span style="font-size: 18px; font-weight: 500;">Breakfast</span>
+        <span style="font-size: 25px; font-weight: 640;">{{ breakfast.menu }}</span>
+        <span style="font-size: 18px; font-weight: 500;">{{ breakfast.description }}</span>
+      </div>
+      <div class="div1">
+        <span style="font-size: 18px; font-weight: 500;">Lunch</span>
+        <span style="font-size: 25px; font-weight: 640;">{{ lunch.menu }}</span>
+        <span style="font-size: 18px; font-weight: 500;">{{ lunch.description }}</span>
+      </div>
+      <div class="div1">
+        <span style="font-size: 18px; font-weight: 500;">Dinner</span>
+        <span style="font-size: 25px; font-weight: 640;">{{ dinner.menu }}</span>
+        <span style="font-size: 18px; font-weight: 500;">{{ dinner.description }}</span>
+      </div>
+    </div>
+  </mat-card>
+  <div class="col-md-3 remove">
+    <mat-card class="right-mat-card-1" (click)="weeklyMenu()">
+      <img src="assets/Logo/Student/Mess/calendar (2).png" alt="" class="logo">
+      THIS WEEK
+    </mat-card>
+    <mat-card class="right-mat-card-2">
+      <img src="assets/Logo/Student/Mess/refresh.png" alt="" class="logo">
+      <p>HISTROY</p>
+      <p style="font-size: 15px;color:#979797">NO OF DISHES TAKEN</p>
+    </mat-card>
+  </div>
+</mat-card>
+</div>
+
+<div *ngIf="!mobile">
+  <div class="mobHead">
+    Today's Menu
+  </div>
+  <mat-card class="mob-mat-card">
+    <p>Type :- BREAKFAST</p>
+    <p>Menu :- {{ breakfast.menu }}</p>
+    <p>Description :- {{ breakfast.description }}</p>
+  </mat-card>
+  <mat-card class="mob-mat-card">
+    <p>Type :- LUNCH</p>
+    <p>Menu :- {{ lunch.menu }}</p>
+    <p>Description :- {{ lunch.description }}</p>
+  </mat-card>
+  <mat-card class="mob-mat-card">
+    <p>Type :- DINNER</p>
+    <p>Menu :- {{ dinner.menu }}</p>
+    <p>Description :-{{ dinner.description }}</p>
+  </mat-card>
+</div>

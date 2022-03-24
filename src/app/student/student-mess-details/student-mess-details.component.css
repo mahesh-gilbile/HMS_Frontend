@@ -1,0 +1,93 @@
+.main-mat-card{
+  margin: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.left-mat-card{
+  background-color: #EADDFA;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.thali{
+  width: 400px;
+  height: 300px;
+  margin: auto;
+}
+
+.info{
+  margin-top: 25px;
+}
+
+.info > p{
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.right-mat-card-1{
+  background-color: #FFE689;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.right-mat-card-2{
+  background-color: #95F9FF;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.logo{
+  width: 100px;
+  height: 100px;
+  margin: auto;
+}
+
+.bg-image{
+  width: 100%;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+  display: flex;
+  flex-direction: row;
+}
+
+.div1{
+  width: 30%;
+  height: 100%;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+@media only screen and (max-width:480px){
+  .mobHead{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .mob-mat-card{
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: 500;
+  }
+}
+

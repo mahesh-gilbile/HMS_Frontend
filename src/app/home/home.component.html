@@ -1,0 +1,11 @@
+<div class="header">
+  <h2>Mahesh's Project</h2>
+  <p>Note :- Scan QR code only generate by this site</p>
+  <button class="btn btn-primary" (click)="changeroute(3)">Scan QR Code 1</button>
+  <button class="btn btn-primary" (click)="changeroute(2)">Scan QR Code 2</button>
+  <button class="btn btn-primary" (click)="changeroute(1)">Generate QR Code</button>
+</div>
+
+<app-generator *ngIf="route === 1"></app-generator>
+<app-import *ngIf="route === 2"></app-import>
+<app-scanner *ngIf="route === 3"></app-scanner>

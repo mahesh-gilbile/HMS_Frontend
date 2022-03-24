@@ -1,0 +1,16 @@
+
+<div class="flexContainer">
+  <h3>Generate QR-Code in Angular Application</h3>
+  <div class="div1">
+    <h5>Generate Code For</h5>
+    <button class="btn btn-dark create" style="margin-left: 0px;" (click)="gcfChange('URL')">URL</button>
+    <button class="btn btn-dark create" (click)="gcfChange('Message')">Message</button>
+  </div>
+  <div class="text-input"  *ngIf="gcf">
+    <input type="text" class="form-control" placeholder= "{{ placeHolderValue }}" [(ngModel)]=value>
+    <button class="btn btn-success generate" (click)="create()" [disabled]="value == null">Generate QR Code {{ gcf }}</button>
+  </div>
+    <div class="QR" *ngIf="createQR">
+      <qr-code [value]="qrdata" [size]="width" [level]="level"></qr-code>
+    </div>
+</div>

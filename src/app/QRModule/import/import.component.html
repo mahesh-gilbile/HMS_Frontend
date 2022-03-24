@@ -1,0 +1,29 @@
+<div class="main-container">
+  <div class="header">
+    <h3>Scan QR Code Using Image Upload</h3>
+  </div>
+  <input #fileinput type="file" (change)="handlefiles($event)" class="inputFile">
+  <canvas #canvas hidden></canvas>
+  <p *ngIf="errorMessage" style="color:brown">Please Upload PNG , JPEG and JPG format Image.</p>
+  <button class="btn btn-info" (click)="captureImage()">Upload Image</button>
+  <div *ngIf="uploadImage">
+    <div>
+      <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true" [aspectRatio]="4 / 4"
+        [resizeToWidth]="256" format="png" (imageCropped)="imageCropped($event)" class="imageCropper"></image-cropper>
+    </div>
+    <div>
+      <button class="btn btn-success" (click)="onSelectPhoto()">Select Photo</button>
+    </div>
+  </div>
+  <div *ngIf="selectImage">
+    <div class="imageDiv">
+      <img src="{{ filePath }}" class="imginput">
+    </div>
+    <div>
+      <button class="btn btn-success" (click)="scanCode(filePath)">Scan Code</button>
+    </div>
+  </div>
+  <div *ngIf="scanResult1">
+    Message :- {{ scanResult }}
+  </div>
+</div>

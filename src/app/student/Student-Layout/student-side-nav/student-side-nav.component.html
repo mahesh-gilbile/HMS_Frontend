@@ -1,0 +1,52 @@
+<div *ngIf="mobile">
+  <div class="pillai-logo-div">
+    <img src="assets/Logo/Student/Dashboard/pillai-logo.png" alt="" class="pillai-logo">
+  </div>
+</div>
+
+<div *ngIf="mobile">
+  <nav>
+    <ul>
+      <li routerLink="./" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <img src="{{ headerText === 'Student Information' ? dashboardLogoBlack : dashboardLogoWhite }}" alt="" class="logo">
+      </li>
+      <li routerLink="guardian" routerLinkActive="active">
+        <img src="{{ headerText === 'Guardian Information' ? guardianLogoBlack : guardianLogoWhite }}" alt="" class="logo">
+      </li>
+      <li routerLink="room" routerLinkActive="active">
+        <img src="{{ headerText === 'Room Details' ? roomLogoBlack : roomLogoWhite }}" alt="" class="logo">
+      </li>
+      <li routerLink="mess" routerLinkActive="active">
+        <img src="{{ headerText === 'Mess Details' ? messLogoBlack : messLogoWhite }}" alt="" class="logo">
+      </li>
+      <li routerLink="fees" routerLinkActive="active">
+        <img src="{{ headerText === 'Fees Details' ? feesLogoBlack : feesLogoWhite }}" alt="" class="logo">
+      </li>
+      <li routerLink="/auth" (click)="onLogout()">
+        <img src="{{logoutLogo}}" alt="" class="logo">
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<div *ngIf="!mobile">
+  <nav>
+    <ul>
+      <li routerLink="./" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <img src="{{ headerText === 'Student Information' ? dashboardLogoBlack : dashboardLogoWhite }}" alt="" class="logo">
+      </li>
+      <li routerLink="guardian" routerLinkActive="active">
+        <img src="{{ headerText === 'Guardian Information' ? guardianLogoBlack : guardianLogoWhite }}" alt="" class="logo">
+      </li>
+      <li routerLink="qrscanner" routerLinkActive="active">
+        <img src="{{ Qr_Scan }}" alt="" class="logo">
+      </li>
+      <li routerLink="room" routerLinkActive="active">
+        <img src="{{ headerText === 'Room Details' ? roomLogoBlack : roomLogoWhite }}" alt="" class="logo">
+      </li>
+      <li routerLink="mess" routerLinkActive="active">
+        <img src="{{ headerText === 'Mess Details' ? messLogoBlack : messLogoWhite }}" alt="" class="logo">
+      </li>
+    </ul>
+  </nav>
+</div>

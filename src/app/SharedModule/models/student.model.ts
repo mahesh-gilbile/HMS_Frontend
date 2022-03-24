@@ -1,0 +1,17 @@
+export interface Student{
+  StudentId,
+  FirstName,
+  MiddleName,
+  LastName,
+  Gender,
+  Age,
+  Citizen,
+  Email,
+  MobileNumber,
+  DOB,
+  Address,
+  Course,
+  Branch,
+  CourseDuration,
+  Year,
+}

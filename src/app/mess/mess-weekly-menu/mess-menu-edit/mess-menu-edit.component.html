@@ -1,0 +1,26 @@
+<div class="MainCard">
+  <header>
+    <div class="invisibile"></div>
+    <div class="type">{{ menu.type }}</div>
+    <div class="day">{{ menu.day }}</div>
+  </header>
+  <hr style="margin-top: 5px;margin-bottom: 10px;border-top: 2px solid lightgray;">
+  <div class="container">
+    <div class="menugroup form-group">
+      <label for="menu">Menu</label><br>
+      <input type="text" id="menu" [(ngModel)]='menu.menu' [disabled]="disable">
+    </div>
+    <div class="descriptiongroup form-group">
+      <label for="description">Description</label><br>
+      <textarea id="description" [(ngModel)]='menu.description' [disabled]="disable"></textarea>
+    </div>
+  </div>
+  <hr style="margin-top: 5px;margin-bottom: 10px;border-top: 2px solid lightgray;">
+  <div class="errorMessage" *ngIf="errorMessage">
+    {{ errorMessage }}
+  </div>
+  <div class="buttons">
+    <button class="btn btn-primary" (click)="onSave()">Save</button>
+    <button class="btn btn-danger" (click)="onBack()">Back</button>
+  </div>
+</div>

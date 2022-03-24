@@ -1,0 +1,19 @@
+<mat-card class="mainCard">
+  <mat-card class="innerCard">
+    <div class="text">THIS WEEK MENU</div>
+    <div class="mainTable">
+      <div class="headerTable">
+        <div class="innerDiv">Days</div>
+        <div class="innerDiv">BreakFast</div>
+        <div class="innerDiv">Lunch</div>
+        <div class="innerDiv">Dinner</div>
+      </div>
+      <div class="headerTable" *ngFor="let m of week_menu">
+        <div class="menuDiv">{{ m.day }}</div>
+        <div class="menuDiv">{{ m.Breakfast }}</div>
+        <div class="menuDiv">{{ m.Lunch }}</div>
+        <div class="menuDiv">{{ m.Dinner }}</div>
+      </div>
+    </div>
+  </mat-card>
+</mat-card>

@@ -1,0 +1,16 @@
+.mainDiv{
+  width: 100%;
+  height: 100%;
+  padding-top: 100px;
+}
+
+mat-card{
+  width: 400px;
+  margin: auto;
+  background-color: #E2F2FA;
+  text-align: center;
+}
+
+.btn{
+  margin-top: 25px;
+}

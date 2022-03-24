@@ -1,0 +1,32 @@
+.main-container{
+  margin: auto;
+  width: 500px;
+  text-align: center;
+}
+
+.inputFile{
+  display: none;
+}
+
+.imageDiv{
+  margin: 15px;
+}
+
+.imginput{
+  width: 250px;
+  height: 250px;
+}
+
+.imageCropper{
+  width: 250px;
+  height: 250px;
+  margin: auto;
+
+}
+
+@media only screen and (min-width:300px) and (max-width:600px){
+  .main-container{
+    width: 95%;
+    margin: auto;
+  }
+}

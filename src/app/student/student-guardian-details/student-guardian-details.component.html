@@ -1,0 +1,45 @@
+<div class="main-Div">
+  <div class="left-Div col-md-9">
+      <mat-card class="mat-card-main">
+          <mat-card class="mat-cards">
+            <img src="assets/Logo/Student/Dashboard/Name.png" alt="" class="logo">
+            <p class="text">{{ guardianInfo.fn }} {{ guardianInfo.mn }} {{ guardianInfo.ln }}</p>
+          </mat-card>
+          <div class="twice-main">
+            <mat-card class="mat-cards twice">
+              <img src="assets/Logo/Student/Guardian/grandparents.png" alt="" class="logo">
+              <p class="text">{{ guardianInfo.relation }}</p>
+            </mat-card>
+            <mat-card class="mat-cards twice">
+              <img src="assets/Logo/Student/Dashboard/gender-symbols.png" alt="" class="logo">
+              <p class="text">{{ guardianInfo.gender }}</p>
+            </mat-card>
+          </div>
+          <mat-card class="mat-cards">
+            <img src="assets/Logo/Student/Dashboard/gmail.png" alt="" class="logo">
+            <p class="text">{{ guardianInfo.email }}
+          </mat-card>
+          <mat-card class="mat-cards">
+            <img src="assets/Logo/Student/Dashboard/telephone.png" alt="" class="logo">
+            <p class="text">{{ guardianInfo.mobn }}</p>
+          </mat-card>
+      </mat-card>
+  </div>
+  <div class="right-Div col-md-3">
+      <mat-card class="mat-card-address">
+        <mat-card-title>
+          <img src="assets/Logo/Student/Dashboard/home-address.png" alt="" class="logo2">
+          <p class="text2">ADDRESS</p>
+        </mat-card-title>
+        <mat-card-content>
+          {{ guardianInfo.add }}
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="mat-card-class">
+        <mat-card-title>
+          <img src="assets/Logo/Student/Guardian/automated-engineering.png" alt="" class="logo2">
+          <p class="text3">{{ guardianInfo.occupation }}</p>
+        </mat-card-title>
+      </mat-card>
+  </div>
+</div>
