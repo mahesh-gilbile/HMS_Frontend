@@ -26,6 +26,7 @@ export class SecurityDashbaordComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.sharedService.visibleSpinner(true);
     this.securityService.getSecurityStaffInfo()
     .subscribe(data => {
       // console.log(data);
@@ -37,7 +38,8 @@ export class SecurityDashbaordComponent implements OnInit {
       this.securityStaffInfo.DOB = data[9].substring(0,2) + " " + this.sharedService.getMonth(data[9].substring(3,5)) + " " + data[9].substring(6,10);
       this.securityStaffInfo.mobn = data[7];
       this.securityStaffInfo.add = data[10];
-      console.log(this.securityStaffInfo);
+      this.sharedService.visibleSpinner(false);
+      // console.log(this.securityStaffInfo);
     })
   }
 

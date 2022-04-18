@@ -55,6 +55,7 @@ mat-card-content{
 .mat-card-applyleave{
   background-color: #91BE27;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .mat-card-leave{

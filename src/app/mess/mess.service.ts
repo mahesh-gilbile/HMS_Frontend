@@ -2,7 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { environment } from "src/environments/environment";
 
-const BACKENDURL = environment.apiURL + "mess/"
+const BACKENDURL = environment.apiURL + "mess/";
 
 @Injectable({
   providedIn : 'root'
@@ -65,6 +65,31 @@ export class MessService {
     return this.http.get<any>(BACKENDURL + 'GenerateQRForMess/' + id);
   }
 
+  applyForLeaves(n:any){
+    const id = this.getMessStaffID();
+    const data = {
+        "from" : n.from,
+        "to" : n.to,
+        "days" : n.days,
+        "reason" : n.reason
+    }
+    return this.http.post<any>(BACKENDURL + 'leaves/' + id , data)
+  }
+
+  historyLeaves(){
+    const id = this.getMessStaffID();
+    return this.http.get<any>(BACKENDURL + 'leaves/' + id);
+  }
+
+  getTodayMessHistory(){
+    const id = this.getMessStaffID();
+    return this.http.get<any>(BACKENDURL + 'getTodayMessHistory/' + id);
+  }
+
+  getQRHistory(){
+    const id = this.getMessStaffID();
+    return this.http.get<any>(BACKENDURL + 'getQRHistory/' + id);
+  }
 
 
 }

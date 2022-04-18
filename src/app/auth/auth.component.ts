@@ -13,15 +13,36 @@ export class AuthComponent implements OnInit {
     private authService: AuthService
   ) { }
 
-  selectedOption;
   username;
   password;
-  login = ["Student" , "Mess" , "Security" , "Warden" , ];
+  Login = ["Student" , "Mess" , "Security" , "Warden" , "Admin" , "Secretory"]
+  loginUser = this.Login[0];
   ngOnInit(): void {
+    
   }
 
   Submit(f){
-    this.authService.onLogin(this.username,this.password,this.selectedOption);
+    this.authService.onLogin(this.username,this.password,this.loginUser);
+  }
+
+  onLeft(){
+    const index = this.Login.indexOf(this.loginUser);
+    if(index === 0){
+      this.loginUser = this.Login[this.Login.length - 1];
+    }else if(index === this.Login.length - 1){
+      this.loginUser = this.Login[index - 1];
+    }else{
+      this.loginUser = this.Login[index-1];
+    }
+  }
+
+  onRight(){
+    const index = this.Login.indexOf(this.loginUser);
+    if(index === this.Login.length - 1){
+      this.loginUser = this.Login[0];
+    }else{
+      this.loginUser = this.Login[index+1];
+    }
   }
 
 }

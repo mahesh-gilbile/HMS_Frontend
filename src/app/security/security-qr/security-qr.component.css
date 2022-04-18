@@ -1,0 +1,45 @@
+.main-mat-card {
+    margin: 10px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    height: 80%;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.mat-card-1 {
+    width: 70%;
+    text-align: center;
+}
+
+.mat-card-2 {
+    width: 28%;
+    height: 20%;
+    background-color: #CBC5FF;
+    cursor: pointer;
+    text-align: center;
+    padding-top: 45px;
+}
+
+.mat-card-2>p {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.QRDiv{
+    margin-top: 20px;
+}
+
+.QrCode{
+    margin-top: 50px;
+  }
+  

@@ -1,0 +1,51 @@
+<mat-card class="mainCard">
+    <div class="applyLeave" *ngIf="applyLeaveDisplay">
+        <form [formGroup]="applyForm" (ngSubmit)="onSubmit()">
+            <div class="upperDiv">
+                <div class="upperDiv1">
+                    <div class="div1">
+                        <p>FROM</p>
+                        <input type="Date" class="input1" formControlName="from">
+                    </div>
+                    <div class="div2">
+                        <p>TO</p>
+                        <input type="Date" class="input1" formControlName="to">
+                    </div>
+                    <div class="div3">
+                        <p>NO OF DAYS</p>
+                        <input type="Number" class="input1" formControlName="days">
+                    </div>
+                </div>
+                <div class="div4">
+                    <button class="btn history-btn" (click)="onChangePage()" type="button">History</button>
+                </div>
+            </div>
+            <div class="lowerDiv">
+                <textarea row="10" class="textareaClass" placeholder="Reason, start Typing here...."
+                    formControlName="reason"></textarea>
+            </div>
+            <div class="applyLeaveButtonDiv">
+                <button class="btn applyLeaveButton" type="submit"  [disabled]="!applyForm.valid">Apply For Leave</button>
+            </div>
+        </form>
+    </div>
+    <div class="historyLeave" *ngIf="!applyLeaveDisplay">
+        <div class="leftDiv1" *ngIf="noData">
+            No Data Found
+        </div>
+        <div class="leftDiv" *ngIf="!noData">
+            <mat-card class="card1" *ngFor="let data of historyOfLeaves">
+                <p class="text1"> <span style="margin-right:18px"> FROM :- {{ data.FromDate }} </span>  TO :- {{ data.ToDate }}</p>
+                <p class="text1">Total Days :- {{ data.Day }}</p>
+                <p class="text1">Reason :- {{ data.Reason }}</p>
+                <p class="btn btn-danger button1" *ngIf="data.Status === 'Reject'">{{ data.Status }}</p>
+                <p class="btn btn-primary button1" *ngIf="data.Status === 'Pending'">{{ data.Status }}</p>
+                <p class="btn btn-success button1" *ngIf="data.Status === 'Approve'">{{ data.Status }}</p>
+                <p class="text1" *ngIf="data.DecisionTakenByID">Descision Taken By <i> {{ data.DescisionTakenByType }} {{ data.DescisionTakenByName }} </i></p>
+            </mat-card>
+        </div>
+        <div class="rightDiv">
+            <button class="btn applyforleavechangebtn" (click)="onChangePage()">Apply For Leave</button>
+        </div>
+    </div>
+</mat-card>

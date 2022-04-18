@@ -1,0 +1,117 @@
+.mainCard{
+    margin: 15px;
+    padding-top: 35px;
+}
+
+.upperDiv{
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.upperDiv1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+p{
+    margin: 0px 0px 5px 0px;
+    color: #7E7E7E;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.div1 , .div2 , .div3{
+    margin: 0px 40px 0px 40px;
+}
+
+.input1{
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid #CACACA;
+}
+
+.history-btn{
+    background-color: #4DEAD0;
+    font-size: 18px;
+    font-weight: 650;
+    margin-right: 40px;
+}
+
+.textareaClass{
+    width: 90%;
+    height: 250px;
+    margin-left: 60px;
+    background-color: #EFEFEF;
+    border:none;
+    border-radius: 10px;
+    outline: none;
+    padding: 15px;
+    color: #939292;
+    font-weight: 650px;
+    font-size: 15px;
+}
+
+.applyLeaveButtonDiv{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.applyLeaveButton{
+    background-color: #4DEA4C;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 650;
+    padding: 15px;
+}
+
+.historyLeave{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.leftDiv{
+    width: 90%;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.leftDiv1{
+    width: 90%;
+    font-size: 18px;
+    font-weight: 650px;
+    text-align: center;
+}
+
+.card1{
+    margin-right: 20px;
+    margin-top: 10px;
+    background-color: #E2F2FA;
+}
+
+.rightDiv{
+    width: 30%;
+    /* margin-right: 30px; */
+}
+
+.applyforleavechangebtn{
+    background-color: #4DEAD0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.text1{
+    font-size: 15px;
+    font-weight: 500;
+    color: black;
+    margin-top: 10px;
+}
+
+.button1{
+    cursor: default;
+    color: white;
+    font-size: 15px;
+}

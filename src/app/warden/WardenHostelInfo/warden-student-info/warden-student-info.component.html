@@ -1,0 +1,51 @@
+<div class="main-Div">
+    <div class="left-Div col-md-9">
+        <mat-card class="mat-card-main">
+            <mat-card class="mat-cards">
+              <img src="assets/Logo/Student/Dashboard/Name.png" alt="" class="logo">
+              <p class="text">{{ studentInfo.fn }} {{studentInfo.mn}} {{studentInfo.ln}}</p>
+            </mat-card>
+            <div class="twice-main">
+              <mat-card class="mat-cards twice">
+                <img src="assets/Logo/Student/Dashboard/cake.png" alt="" class="logo">
+                <p class="text">{{ studentInfo.DOB }}</p>
+              </mat-card>
+              <mat-card class="mat-cards twice">
+                <img src="assets/Logo/Student/Dashboard/gender-symbols.png" alt="" class="logo">
+                <p class="text">{{ studentInfo.gender}}</p>
+              </mat-card>
+            </div>
+            <mat-card class="mat-cards">
+              <img src="assets/Logo/Student/Dashboard/gmail.png" alt="" class="logo">
+              <p class="text">{{ studentInfo.email }}
+            </mat-card>
+            <mat-card class="mat-cards">
+              <img src="assets/Logo/Student/Dashboard/telephone.png" alt="" class="logo">
+              <p class="text">{{ studentInfo.mobn }}</p>
+            </mat-card>
+        </mat-card>
+    </div>
+    <div class="right-Div col-md-3">
+        <mat-card class="mat-card-address">
+          <mat-card-title>
+            <img src="assets/Logo/Student/Dashboard/home-address.png" alt="" class="logo2">
+            <p class="text2">ADDRESS</p>
+          </mat-card-title>
+          <mat-card-content>
+            {{ studentInfo.add }}
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="mat-card-class">
+          <mat-card-title>
+            <img src="assets/Logo/Student/Dashboard/education.png" alt="" class="logo2">
+            <p class="text3">Check IN/OUT Status</p>
+          </mat-card-title>
+        </mat-card>
+        <mat-card class="mat-card-password" routerLink="changepassword">
+          <mat-card-title>
+            <img src="assets/Logo/Student/Dashboard/padlock.png" alt="" class="logo2">
+            <p class="text3">Fees</p>
+          </mat-card-title>
+        </mat-card>
+    </div>
+</div>

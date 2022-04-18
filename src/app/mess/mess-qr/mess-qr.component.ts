@@ -1,5 +1,6 @@
 import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { SharedService } from 'src/app/SharedModule/Service/shared.service';
 import { MessService } from '../mess.service';
 
@@ -15,7 +16,8 @@ export class MessQRComponent implements OnInit {
   date:any;
   constructor(
     private messService: MessService,
-    private sharedService: SharedService
+    private sharedService: SharedService,
+    private router : Router
   ) {
     this.level = "L";
     this.width = 200;
@@ -100,6 +102,15 @@ export class MessQRComponent implements OnInit {
 
   closeQR(){
     this.createQRStatus = false;
+  }
+
+
+  onTodayHistory(){
+    this.router.navigate(['../../mess/todayHistory'])
+  }
+
+  onQRHistory(){
+    this.router.navigate(['../../mess/qrHistory'])
   }
 
 }

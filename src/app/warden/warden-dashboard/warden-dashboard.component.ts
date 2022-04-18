@@ -27,6 +27,7 @@ export class WardenDashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.sharedService.visibleSpinner(true);
     this.wardenService.getWardenInfo()
     .subscribe(data => {
       this.wardenInfo.fn = data[1];
@@ -37,6 +38,7 @@ export class WardenDashboardComponent implements OnInit {
       this.wardenInfo.DOB = data[9].substring(0,2) + " " + this.sharedService.getMonth(data[9].substring(3,5)) + " " + data[9].substring(6,10);
       this.wardenInfo.mobn = data[7];
       this.wardenInfo.add = data[10];
+      this.sharedService.visibleSpinner(false);
     })
   }
 

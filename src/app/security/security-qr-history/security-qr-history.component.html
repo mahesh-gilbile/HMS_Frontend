@@ -1,0 +1,37 @@
+<mat-card class="outerCard">
+    <mat-card class="innerCard" *ngIf="parent">
+        <div class="header">
+           <div> Today's Date :- {{ date | date}}</div>
+           <div> QR Generated History</div>
+        </div>
+        <hr>
+        <mat-card class="mainCard">
+            <div class="Div">Name of the Employee Generate Code</div>
+            <div class="Div">Time</div>
+        </mat-card>
+        <mat-card class="mainCard1" *ngFor="let d of todayQrHistory" (click)="getQRCodeHistory(d.QR_ID)">
+            <div class="Div">{{ d.FirstName }} {{ d.MiddleName }} {{ d.LastName }}</div>
+            <div class="Div">{{ d.Time }}</div>
+        </mat-card>
+    </mat-card>
+    <mat-card class="innerCard" *ngIf="!parent">
+        <div class="header">
+           <div> Today's Date :- {{ date | date}}</div>
+           <button class="btn btn-primary" (click)="onBack()">Back</button>
+        </div>
+        <div class="header1">
+            <div> Specific QR History</div>
+        </div>
+        <hr>
+        <mat-card class="mainCard">
+            <div class="Div">Student Name</div>
+            <div class="Div">Time</div>
+            <div class="Div">Status</div>
+        </mat-card>
+        <mat-card class="mainCard1" *ngFor="let d of oneQrHistory">
+            <div class="Div">{{ d.FirstName }} {{ d.MiddleName }} {{ d.LastName }}</div>
+            <div class="Div">{{ d.Time }}</div>
+            <div class="Div">{{ d.Status }}</div>
+        </mat-card>
+    </mat-card>
+</mat-card>

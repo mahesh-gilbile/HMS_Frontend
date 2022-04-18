@@ -1,0 +1,16 @@
+<mat-card class="outerCard">
+    <mat-card class="innerCard">
+        <mat-card class="mainCard">
+            <div class="Div">Date</div>
+            <div class="Div">Name of the Employee Generate Code</div>
+            <div class="Div">Time</div>
+            <div class="Div">Food Type</div>
+        </mat-card>
+        <mat-card class="mainCard1" *ngFor="let d of getQRHistory">
+            <div class="Div">{{ d.Date | date }}</div>
+            <div class="Div">{{ d.FirstName }} {{ d.MiddleName }} {{ d.LastName }}</div>
+            <div class="Div">{{ d.Time }}</div>
+            <div class="Div">{{ d.Type }}</div>
+        </mat-card>
+    </mat-card>
+</mat-card>

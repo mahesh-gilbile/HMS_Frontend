@@ -12,7 +12,12 @@
       <qr-code [value]="qrData" [size]="width" [level]="level"></qr-code>
     </div>
   </mat-card>
-  <mat-card class="mat-card-2">
-    <p>Today's History</p>
-  </mat-card>
+  <div class="right">
+    <mat-card class="mat-card-2" (click)="onTodayHistory()">
+      <p>Today's History</p>
+    </mat-card>
+    <mat-card class="mat-card-2" (click)="onQRHistory()">
+      <p>QR History</p>
+    </mat-card>  
+  </div>
 </mat-card>

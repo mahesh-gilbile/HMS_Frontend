@@ -1,0 +1,67 @@
+.main-Div {
+    /* margin-top: 25px; */
+}
+
+.header {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.main-mat-card {
+    margin: 30px;
+}
+
+.mat-cards {
+    background-color: #E2F2FA;
+    display: flex;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+.div1 {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.twice-main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.twice {
+    width: 49%;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
+.text {
+    margin: 15px 0px 0px 25px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.text1 {
+
+    font-size: 18px;
+    font-weight: 600;
+}
+
+@media only screen and (max-width:480px) {
+    .twice-main {
+        display: block;
+    }
+
+    .twice {
+        width: auto;
+    }
+
+    .remove {
+        display: none;
+    }
+}

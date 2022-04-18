@@ -1,0 +1,8 @@
+<mat-card class="outerCard">
+    <mat-card class="innerCard">
+        <mat-card class="mainCard" *ngFor="let d of gateHistory">
+            <p>DATE :- {{ d.Date }}</p>
+            <p>CHECK {{ d.Status }} AT {{ d.Time }}</p>
+        </mat-card>
+    </mat-card>
+</mat-card>

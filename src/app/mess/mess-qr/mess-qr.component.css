@@ -25,13 +25,18 @@
   margin-top: 50px;
 }
 
+.right{
+  width: 27%;
+}
+
 .mat-card-2{
-  width: 28%;
+  width: 100%;
   height: 20%;
   background-color: #CBC5FF;
   cursor: pointer;
   text-align: center;
   padding-top: 45px;
+  margin-bottom: 10px;
 }
 
 .mat-card-2 > p{

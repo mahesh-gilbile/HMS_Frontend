@@ -1,0 +1,26 @@
+.outerCard{
+    margin: 10px;
+}
+
+.innerCard{
+    background-color: #EADDFA;
+}
+
+.mainCard{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-around; */
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.Div{
+    width: 30%;
+    text-align: center;
+}
+
+.header{
+    font-size: 20px;
+    font-weight: 550;
+}

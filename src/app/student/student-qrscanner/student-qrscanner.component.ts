@@ -1,7 +1,9 @@
-import { CDK_CONNECTED_OVERLAY_SCROLL_STRATEGY_PROVIDER_FACTORY } from '@angular/cdk/overlay/overlay-directives';
+
+import { sharedStylesheetJitUrl } from '@angular/compiler';
 import { Component, ElementRef, HostListener, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import jsQR from 'jsqr';
+import { SharedService } from 'src/app/SharedModule/Service/shared.service';
 import { StudentService } from '../student.service';
 
 @Component({
@@ -13,20 +15,28 @@ export class StudentQRScannerComponent implements OnInit , OnDestroy {
 
   constructor(
     private router: Router,
-    private studenService: StudentService
+    private studenService: StudentService,
+    private sharedService: SharedService
   ) { }
 
   public getScreenWidth:any;
   scanActive = true;
   scanResult = null;
   errorMessage = null;
-  responseStatus = false;
-  responseData = {
+  messResponseStatus = false;
+  gateResponseStatus = false;
+  messResponseData = {
     MessStaffName : '',
     Type : '',
     Time : '',
     Date : '',
   };
+  gateResponseData = {
+    SecurityGuardName : '',
+    Status : '',
+    Time : '',
+    Date : ''
+  }
 
   @ViewChild('video') video: ElementRef;
   @ViewChild('canvas') canvas: ElementRef;
@@ -61,7 +71,8 @@ export class StudentQRScannerComponent implements OnInit , OnDestroy {
   }
 
   async startScan(){
-    this.responseStatus = false;
+    this.messResponseStatus = false;
+    this.gateResponseStatus = false;
     this.errorMessage = null;
     const stream = await navigator.mediaDevices.getUserMedia({
       video : { facingMode: "environment"}
@@ -117,6 +128,7 @@ export class StudentQRScannerComponent implements OnInit , OnDestroy {
     this.scanActive = false;
     const stream = this.videoElement.srcObject;
     stream.getTracks()[0].stop();
+    this.sharedService.visibleSpinner(false);
   }
 
   resetScan(){
@@ -124,13 +136,27 @@ export class StudentQRScannerComponent implements OnInit , OnDestroy {
   }
 
   showQRCode(n){
+    this.sharedService.visibleSpinner(true);
     const data = JSON.parse(n);
     if(data.title === 'Hostel Management System'){
       if(data.For === 'Mess' ){
-        console.log(data);
+        // console.log(data);
         this.studenService.scanQRForMess(data)
         .subscribe(data => {
-          this.displayMessge(data)
+          this.displayMessMessge(data)
+        },error => {
+          this.errorMessage = error.error;
+          this.stopScan();
+        })
+      }else if(data.For === 'Gate Entry'){
+        this.studenService.scanQRForGate(data)
+        .subscribe(data => {
+          console.log(data);
+          this.displayGateMessage(data);
+        }, error => {
+          // console.log(error);
+          this.errorMessage = error.error;
+          this.stopScan();
         })
       }
     }else{
@@ -145,12 +171,24 @@ export class StudentQRScannerComponent implements OnInit , OnDestroy {
     stream.getTracks()[0].stop();
   }
 
-  displayMessge(data){
-    this.responseStatus = true
-    this.responseData.MessStaffName = data.MessStaffName;
-    this.responseData.Type = data.Type;
-    this.responseData.Date = data.Date;
-    this.responseData.Time = data.Time;
+  displayMessMessge(data){
+    this.stopScan();
+    this.messResponseStatus = true
+    this.messResponseData.MessStaffName = data.MessStaffName;
+    this.messResponseData.Type = data.Type;
+    this.messResponseData.Date = data.Date;
+    this.messResponseData.Time = data.Time;
+    this.sharedService.visibleSpinner(false);
+  }
+
+  displayGateMessage(data){
+    this.stopScan();
+    this.gateResponseStatus = true;
+    this.gateResponseData.SecurityGuardName = data.SecurityGuardName.FirstName + " " + data.SecurityGuardName.MiddleName + " " + data.SecurityGuardName.LastName;
+    this.gateResponseData.Date = data.QR_Info.Date;
+    this.gateResponseData.Status = data.QR_Info.Status;
+    this.gateResponseData.Time = data.QR_Info.Time; 
+    this.sharedService.visibleSpinner(false);
   }
 
 

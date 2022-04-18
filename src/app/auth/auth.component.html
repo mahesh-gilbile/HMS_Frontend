@@ -1,4 +1,4 @@
-<div class="mainDiv">
+<!-- <div class="mainDiv">
 <mat-card>
   <form (ngSubmit)="Submit(f)" #f="ngForm">
     <input type="text" class="form-control" #required [(ngModel)]="username" placeholder="Username" [ngModelOptions]="{standalone: true}">
@@ -10,4 +10,70 @@
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </mat-card>
+</div> -->
+
+<div class="mainDiv">
+  <div class="left col-md-5">
+    <div class="container">
+      <div class="student" *ngIf="loginUser === 'Student'">
+        <video width="350" height="350" autoplay loop>
+          <source src="assets/Login_Videos/Student.mp4">
+        </video>
+      </div>
+      <div class="admin" *ngIf="loginUser === 'Admin'">
+        <video width="350" height="350" autoplay loop>
+          <source src="assets/Login_Videos/Admin.mp4">
+        </video>
+      </div>
+      <div class="warden" *ngIf="loginUser === 'Warden'">
+        <video width="350" height="350" autoplay loop>
+          <source src="assets/Login_Videos/Warden.mp4">
+        </video>
+      </div>
+      <div class="security" *ngIf="loginUser === 'Security'">
+        <video width="350" height="350" autoplay loop>
+          <source src="assets/Login_Videos/Security.mp4">
+        </video>
+      </div>
+      <div class="mess" *ngIf="loginUser === 'Mess'">
+        <video width="350" height="350" autoplay loop>
+          <source src="assets/Login_Videos/Mess food.mp4">
+        </video>
+      </div>
+      <div class="secretory" *ngIf="loginUser === 'Secretory'">
+        <video width="350" height="350" autoplay loop>
+          <source src="assets/Login_Videos/Mess food.mp4">
+        </video>
+      </div>
+      <div class="buttons">
+        <button (click)="onLeft()" class="left-button"><img src="assets/Login_Videos/next.png" alt=""
+            class="nextbuttons"></button>
+        <p class="text">{{ loginUser }}</p>
+        <button (click)="onRight()" class="right-button"><img src="assets/Login_Videos/next.png" alt=""
+            class="nextbuttons"></button>
+      </div>
+    </div>
+    <div class="mobile-view">
+      Student Login
+    </div>
+  </div>
+  <div class="right col-md-5">
+    <div class="loginDiv">
+      <mat-card class="card">
+        <form class="example-form" (ngSubmit)="Submit(f)" #f="ngForm">
+          <mat-form-field class="input-field" appearance="fill">
+            <mat-label>Username</mat-label>
+            <input type="email" matInput #required [(ngModel)]="username" placeholder="Username"
+              [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+          <mat-form-field class="input-field" appearance="fill">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput #required [(ngModel)]="password" placeholder="Password"
+              [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+          <button class="submit"> GET STARTED</button>
+        </form>
+      </mat-card>
+    </div>
+  </div>
 </div>

@@ -1,0 +1,9 @@
+<mat-card class="outerCard">
+    <mat-card class="innerCard">
+        <mat-card class="mainCard" *ngFor="let d of messHistory">
+            <div class="Div">Date :- {{ d.Date }}</div>
+            <div class="Div">{{ d.Type }}</div>
+            <div class="Div">{{ d.FoodMenu }}</div>
+        </mat-card>
+    </mat-card>
+</mat-card>

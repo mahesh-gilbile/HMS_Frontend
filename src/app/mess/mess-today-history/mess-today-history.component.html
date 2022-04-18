@@ -1,0 +1,13 @@
+<mat-card class="outerCard">
+    <mat-card class="innerCard">
+        <div class="header">
+            Today's Date :- 
+        </div>
+        <hr>
+        <mat-card class="mainCard" *ngFor="let d of todayMessHistory">
+            <div class="Div">{{ d.FirstName }} {{ d.MiddleName }} {{ d.LastName }}</div>
+            <div class="Div">{{ d.ScanTime }}</div>
+            <div class="Div">{{ d.Type }}</div>
+        </mat-card>
+    </mat-card>
+</mat-card>

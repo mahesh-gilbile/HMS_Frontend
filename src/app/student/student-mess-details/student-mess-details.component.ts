@@ -62,5 +62,9 @@ export class StudentMessDetailsComponent implements OnInit {
     }
   }
 
+  onHistoryPage(){
+    this.router.navigate(['../../student/messHistory'])
+  }
+
 
 }

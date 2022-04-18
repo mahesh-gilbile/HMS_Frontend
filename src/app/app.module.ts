@@ -19,6 +19,9 @@ import { SecurityModule } from './security/security.module';
 import { WardenModule } from './warden/warden.module';
 import { HttpClientModule } from '@angular/common/http';
 import { SpinnerComponent } from './SharedModule/Component/spinner/spinner.component';
+import { SecretoryModule } from './secretory/secretory.module';
+import { AdminComponent } from './admin/admin.component';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,7 @@ import { SpinnerComponent } from './SharedModule/Component/spinner/spinner.compo
     ScannerComponent,
     GeneratorComponent,
     ImportComponent,
-    SpinnerComponent
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +46,8 @@ import { SpinnerComponent } from './SharedModule/Component/spinner/spinner.compo
     SecurityModule,
     WardenModule,
     AuthModule,
+    SecretoryModule,
+    AdminModule,
     AppRoutingModule
   ],
   providers: [],

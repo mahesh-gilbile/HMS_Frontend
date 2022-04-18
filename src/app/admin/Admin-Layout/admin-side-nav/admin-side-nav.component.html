@@ -1,0 +1,28 @@
+<div>
+    <div class="pillai-logo-div">
+      <img src="assets/Logo/Student/Dashboard/pillai-logo.png" alt="" class="pillai-logo">
+    </div>
+  </div>
+  
+  <div>
+    <nav>
+      <ul>
+        <li routerLink="./" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+          <img src="{{ headerText === 'Personal Details' ? dashboardBlack : dashboardWhite}}" alt="" class="logo">
+        </li>
+        <!-- <li routerLink="allotedDuties" routerLinkActive="active">
+          <img src="{{ headerText === 'Alloted Duties' ? allotedDutiesBlack : allotedDutiesWhite}}" alt="" class="logo">
+        </li> -->
+        <li routerLink="leaveInfo" routerLinkActive="active">
+          <img src="{{ headerText === 'Leave Information' ? leaveInfoBlack : leaveInfoWhite}}" alt="" class="logo">
+        </li>
+        <li routerLink="employeeInfo" routerLinkActive="active">
+            <img src="{{ headerText === 'Employee Information' ? employeeBlack : employeeWhite}`~}" alt="" class="logo">
+          </li>
+        <li routerLink="/auth" (click)="onLogout()">
+          <img src="{{logout}}" alt="" class="logo">
+        </li>
+      </ul>
+    </nav>
+  </div>
+  

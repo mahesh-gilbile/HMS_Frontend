@@ -1,4 +1,4 @@
-import { CommonModule } from "@angular/common";
+import { CommonModule, DatePipe } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { AppMaterialModule } from "../app-material.module";
 import { AppRoutingModule } from "../app-routing.module";
@@ -13,6 +13,9 @@ import { MessChangePasswordComponent } from './mess-change-password/mess-change-
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MessWeeklyMenuComponent } from './mess-weekly-menu/mess-weekly-menu.component';
 import { MessMenuEditComponent } from './mess-weekly-menu/mess-menu-edit/mess-menu-edit.component';
+import { MessApplyLeaveComponent } from './mess-apply-leave/mess-apply-leave.component';
+import { MessTodayHistoryComponent } from './mess-today-history/mess-today-history.component';
+import { MessQrHistoryComponent } from './mess-qr-history/mess-qr-history.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { MessMenuEditComponent } from './mess-weekly-menu/mess-menu-edit/mess-me
     MessMenuComponent,
     MessChangePasswordComponent,
     MessWeeklyMenuComponent,
-    MessMenuEditComponent
+    MessMenuEditComponent,
+    MessApplyLeaveComponent,
+    MessTodayHistoryComponent,
+    MessQrHistoryComponent
   ],
   imports: [
     CommonModule,
@@ -33,6 +39,9 @@ import { MessMenuEditComponent } from './mess-weekly-menu/mess-menu-edit/mess-me
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule
+  ],
+  providers : [
+    DatePipe
   ]
 })
 

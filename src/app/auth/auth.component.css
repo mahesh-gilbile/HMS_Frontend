@@ -1,4 +1,4 @@
-.mainDiv{
+/* .mainDiv{
   width: 100%;
   height: 100%;
   padding-top: 100px;
@@ -13,4 +13,95 @@ mat-card{
 
 .btn{
   margin-top: 25px;
+} */
+
+.left{
+  margin: 10% 0px 0px 10%;
+}
+
+
+.text{
+  text-align: center;
+  font-size: 25px;
+  font-weight: 500;
+  color: #00024B;
+  text-transform: uppercase;
+}
+
+.student{
+  width: 350px;
+}
+
+.buttons{
+  width: 30%;
+  display: flex;
+  margin: 20px 0px 0px 0px;
+  justify-content: space-between;
+}
+
+.left-button{
+  background-color: white;
+  border: none;
+  transform: rotate(180deg);
+  
+}
+
+.right-button{
+  background-color: white;
+  border: none;
+}
+
+.nextbuttons{
+  width: 40px;
+  height: 40px;
+}
+
+.card{
+  margin-top: 250px;
+  background-color: #C9EDFF;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.input-field{
+  width: 90%;
+}
+
+.user-img{
+  width: 25px;
+  height: 25px;
+  position: absolute
+}
+
+.submit{
+  background-color: white;
+  width: 300px;
+  height: 30px;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  color:#00005F;
+}
+
+.mobile-view{
+  display: none;
+}
+
+@media only screen and (max-width: 480px) {
+  .container{
+    display: none;
+  }
+
+  .mobile-view{
+    display: block;
+    font-size: 25px;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .card{
+    margin-top: 20px;
+  }
 }

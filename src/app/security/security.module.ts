@@ -1,4 +1,4 @@
-import { CommonModule } from "@angular/common";
+import { CommonModule, DatePipe } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { QRCodeModule } from "angular2-qrcode";
 import { AppMaterialModule } from "../app-material.module";
@@ -10,6 +10,8 @@ import { SecurityDashbaordComponent } from './security-dashbaord/security-dashba
 import { SecurityQRComponent } from './security-qr/security-qr.component';
 import { SecurityChangePasswordComponent } from './security-change-password/security-change-password.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { SecurityApplyLeaveComponent } from './security-apply-leave/security-apply-leave.component';
+import { SecurityQrHistoryComponent } from './security-qr-history/security-qr-history.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     SecuritySideNavComponent,
     SecurityDashbaordComponent,
     SecurityQRComponent,
-    SecurityChangePasswordComponent
+    SecurityChangePasswordComponent,
+    SecurityApplyLeaveComponent,
+    SecurityQrHistoryComponent
   ],
   imports:[
     CommonModule,
@@ -27,6 +31,9 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule
+  ],
+  providers:[
+    DatePipe
   ]
 })
 

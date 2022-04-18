@@ -15,6 +15,8 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { StudentWeekMenuComponent } from './student-week-menu/student-week-menu.component';
 import { shortStringPipe } from "../SharedModule/Pipe/shortstring.pipe";
 import { StudentQRScannerComponent } from './student-qrscanner/student-qrscanner.component';
+import { StudentMessHistoryDetailsComponent } from './student-mess-history-details/student-mess-history-details.component';
+import { StudentGateHistoryComponent } from './student-gate-history/student-gate-history.component';
 
 @NgModule({
   declarations : [
@@ -29,7 +31,9 @@ import { StudentQRScannerComponent } from './student-qrscanner/student-qrscanner
     StudentFeesDetailsComponent,
     StudentWeekMenuComponent,
     shortStringPipe,
-    StudentQRScannerComponent
+    StudentQRScannerComponent,
+    StudentMessHistoryDetailsComponent,
+    StudentGateHistoryComponent
   ],
   imports : [
     CommonModule,

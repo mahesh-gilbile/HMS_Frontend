@@ -1,1 +1,23 @@
-<p>security-qr works!</p>
+<mat-card class="main-mat-card">
+    <mat-card class="mat-card-1">
+      <div class="header">
+        <div>{{ date }}</div>
+        <div>
+            <div> {{ HostelName }} </div>
+            <div> {{ GateName }} </div>
+        </div>
+        <div>{{ day }}</div>
+      </div>
+      <div class="QRDiv">
+        <button class="btn btn-success" *ngIf="!createQRStatus" (click)="generateQRCode()">Generate QR Code For Gate</button>
+        <button class="btn btn-danger" *ngIf="createQRStatus" (click)="closeQR()">Close</button>
+        <div *ngIf="createQRStatus" class="QrCode">
+            <qr-code [value]="qrData" [size]="width" [level]="level"></qr-code>
+          </div>
+      </div>
+    </mat-card>
+    <mat-card class="mat-card-2" (click)="routeOnHistory()">
+      <p>Today's History</p>
+    </mat-card>
+  </mat-card>
+  

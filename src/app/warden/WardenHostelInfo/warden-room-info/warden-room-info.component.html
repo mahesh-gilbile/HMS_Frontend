@@ -1,0 +1,27 @@
+<div class="main-Div">
+    <mat-card class="main-mat-card col-md-9">
+        <div class="header">
+            {{ hostelName }} <span class="arrow"> → </span> {{ wingName }} <span class="arrow"> → </span> {{ roomNumber }}
+        </div>
+        <hr>
+      <div class="twice-main">
+        <mat-card class="mat-cards twice">
+          <img src="assets/Logo/Student/Room/room-door.png" alt="" class="logo">
+          <p class="text">ROOM NUMBER :- {{ roomNumber }}</p>
+        </mat-card>
+        <mat-card class="mat-cards twice">
+          <img src="assets/Logo/Student/Room/stairs.png" alt="" class="logo">
+          <p class="text">{{ wingName }}</p>
+        </mat-card>
+      </div>
+      <mat-card class="mat-cards" *ngFor="let r of roomMemberDetails" (click)="onRouteOnStudent(r.Student_ID)">
+        <img src="assets/Logo/Student/Room/roommate.png" alt="" class="logo">
+        <div class="div1">
+          <p class="text">{{ r.First_Name }} {{ r.Middle_Name }} {{ r.Last_Name }}</p>
+          <p class="text remove">{{ r.Mobile_Number }}</p>
+          <p class="text remove">{{ r.Email }}</p>
+        </div>
+      </mat-card>
+    </mat-card>
+  </div>
+  

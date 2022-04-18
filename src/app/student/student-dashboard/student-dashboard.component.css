@@ -65,6 +65,7 @@ mat-card-content{
 .mat-card-password{
   background-color: #B4C6DA;
   cursor: pointer;
+  margin-bottom: 10px;
 }
 
 .text3{

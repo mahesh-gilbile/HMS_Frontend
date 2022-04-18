@@ -85,6 +85,22 @@ export class StudentService{
 
   scanQRForMess(data){
     const id = this.getStudentId();
-    return this.http.post<any>(BACKENDURL_Student + 'scanMess/' + id , data);
+    return this.http.post<any>(BACKENDURL_Student + 'scanForMess/' + id , data);
   }
+
+  scanQRForGate(data){
+    const id = this.getStudentId();
+    return this.http.post<any>(BACKENDURL_Student + 'scanForGate/' + id , data);
+  }
+
+  getMessHistory(){
+    const id = this.getStudentId();
+    return this.http.get<any>(BACKENDURL_Student + 'getMessHistory/' + id);
+  }
+
+  getGateHistory(){
+    const id = this.getStudentId();
+    return this.http.get<any>(BACKENDURL_Student + 'getGateHistory/' + id);
+  }
+  
 }
