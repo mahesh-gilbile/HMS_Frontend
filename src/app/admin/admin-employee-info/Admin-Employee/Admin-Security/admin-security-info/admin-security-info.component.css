@@ -1,0 +1,31 @@
+.mainCard{
+    margin: 15px;
+}
+
+header{
+    text-align: right;
+}
+
+.btn{
+    background-color: #ABBDEF;
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+}
+
+.middleDiv{
+    margin-top: 10px;
+}
+
+.infoCard{
+    background-color: #B3C5DA;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px;
+    border-radius: 20px;
+}
+
+.editbtn{
+background-color: #AAAF1E;
+}

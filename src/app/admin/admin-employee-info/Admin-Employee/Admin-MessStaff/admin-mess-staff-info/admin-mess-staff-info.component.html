@@ -1,0 +1,17 @@
+<mat-card class="mainCard">
+    <header>
+        <button class="btn" (click)="onAddMessStaff()">ADD MESS STAFF</button>
+    </header>
+    <div class="middleDiv">
+        <mat-card class="infoCard" *ngFor="let d of messStaffData">
+            <div>
+                <p>{{ d.name }}</p>
+                <p>Email</p>
+                <p>Contact</p>
+            </div>
+            <div>
+                <button class="btn editbtn" (click)="onEditRoute(d.id)">Edit</button>
+            </div>
+        </mat-card>
+    </div>
+</mat-card>

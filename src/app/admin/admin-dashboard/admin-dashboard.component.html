@@ -1,1 +1,62 @@
-<p>admin-dashboard works!</p>
+<div class="main-Div">
+    <div class="left-Div col-md-9">
+        <mat-card class="mat-card-main">
+            <mat-card class="mat-cards">
+              <img src="assets/Logo/Student/Dashboard/Name.png" alt="" class="logo">
+              <p class="text">{{ adminInfo.fn }} {{ adminInfo.mn }} {{ adminInfo.ln }}</p>
+            </mat-card>
+            <div style="display: flex;justify-content:space-between;">
+              <mat-card class="mat-cards twice">
+                <img src="assets/Logo/Student/Dashboard/cake.png" alt="" class="logo">
+                <p class="text">{{ adminInfo.DOB }}</p>
+              </mat-card>
+              <mat-card class="mat-cards twice">
+                <img src="assets/Logo/Student/Dashboard/gender-symbols.png" alt="" class="logo">
+                <p class="text">{{ adminInfo.gender }}</p>
+              </mat-card>
+            </div>
+            <mat-card class="mat-cards">
+              <img src="assets/Logo/Student/Dashboard/gmail.png" alt="" class="logo">
+              <p class="text">{{ adminInfo.email }}
+            </mat-card>
+            <mat-card class="mat-cards">
+              <img src="assets/Logo/Student/Dashboard/telephone.png" alt="" class="logo">
+              <p class="text">{{ adminInfo.mobn }}</p>
+            </mat-card>
+        </mat-card>
+    </div>
+    <div class="right-Div col-md-3">
+        <mat-card class="mat-card-address">
+          <mat-card-title>
+            <img src="assets/Logo/Student/Dashboard/home-address.png" alt="" class="logo2">
+            <p class="text2">ADDRESS</p>
+          </mat-card-title>
+          <mat-card-content>
+            {{ adminInfo.add }}
+          </mat-card-content>
+        </mat-card>
+        <!-- <mat-card class="mat-card-applyleave"  routerLink="leaves">
+          <mat-card-title>
+            <img src="assets/Logo/Common Logo's/leave.png" alt="" class="logo2">
+            <p class="text3">Apply For Leave</p>
+          </mat-card-title>
+        </mat-card> -->
+        <!-- <mat-card class="mat-card-leave">
+          <mat-card-title>
+            <img src="assets/Logo/Common Logo's/countdown.png" alt="" class="logo2">
+            <p class="text3">Remaining Leave</p>
+          </mat-card-title>
+          <mat-card-content>
+            0/0
+          </mat-card-content>
+        </mat-card> -->
+        <mat-card class="mat-card-password" routerLink="changepassword">
+          <mat-card-title>
+            <img src="assets/Logo/Student/Dashboard/padlock.png" alt="" class="logo2">
+            <p class="text3">CHANGE PASSWORD</p>
+          </mat-card-title>
+        </mat-card>
+    </div>
+  </div>
+  
+  

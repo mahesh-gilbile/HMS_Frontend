@@ -51,6 +51,18 @@ import { AdminDashboardComponent } from "./admin/admin-dashboard/admin-dashboard
 import { AdminChangePasswordComponent } from "./admin/admin-change-password/admin-change-password.component";
 import { AdminLeaveInfoComponent } from "./admin/admin-leave-info/admin-leave-info.component";
 import { AdminEmployeeInfoComponent } from "./admin/admin-employee-info/admin-employee-info.component";
+import { AdminSecretoryInfoComponent } from "./admin/admin-employee-info/Admin-Employee/Admin-Secretory/admin-secretory-info/admin-secretory-info.component";
+import { AdminAddSecretoryComponent } from "./admin/admin-employee-info/Admin-Employee/Admin-Secretory/admin-add-secretory/admin-add-secretory.component";
+import { AdminEditSecretoryComponent } from "./admin/admin-employee-info/Admin-Employee/Admin-Secretory/admin-edit-secretory/admin-edit-secretory.component";
+import { AdminAddWardenComponent } from "./admin/admin-employee-info/Admin-Employee/Admin-Warden/admin-add-warden/admin-add-warden.component";
+import { AdminEditWardenComponent } from "./admin/admin-employee-info/Admin-Employee/Admin-Warden/admin-edit-warden/admin-edit-warden.component";
+import { AdminWardenInfoComponent } from "./admin/admin-employee-info/Admin-Employee/Admin-Warden/admin-warden-info/admin-warden-info.component";
+import { AdminMessStaffInfoComponent } from "./admin/admin-employee-info/Admin-Employee/Admin-MessStaff/admin-mess-staff-info/admin-mess-staff-info.component";
+import { AdminAddMessStaffComponent } from "./admin/admin-employee-info/Admin-Employee/Admin-MessStaff/admin-add-mess-staff/admin-add-mess-staff.component";
+import { AdminEditMessStaffComponent } from "./admin/admin-employee-info/Admin-Employee/Admin-MessStaff/admin-edit-mess-staff/admin-edit-mess-staff.component";
+import { AdminAddSecurityComponent } from "./admin/admin-employee-info/Admin-Employee/Admin-Security/admin-add-security/admin-add-security.component";
+import { AdminEditSecurityComponent } from "./admin/admin-employee-info/Admin-Employee/Admin-Security/admin-edit-security/admin-edit-security.component";
+import { AdminSecurityInfoComponent } from "./admin/admin-employee-info/Admin-Employee/Admin-Security/admin-security-info/admin-security-info.component";
 
 const appRoutes: Routes = [
   { path: '' , redirectTo: 'auth' , pathMatch: 'full'},
@@ -104,7 +116,19 @@ const appRoutes: Routes = [
     { path : '' , component: AdminDashboardComponent , data : { title : 'Personal Details'}},
     { path: 'changepassword' , component: AdminChangePasswordComponent , data : { title : 'Change Password'}},
     { path: 'leaveInfo' , component: AdminLeaveInfoComponent , data : { title : 'Leave Information'}},
-    { path: 'employeeInfo' , component: AdminEmployeeInfoComponent , data : { title : 'Employee Information'}}
+    { path: 'employeeInfo' , component: AdminEmployeeInfoComponent , data : { title : 'Employee Information'}},
+    { path: 'employeeInfo/secretoryInfo' , component: AdminSecretoryInfoComponent , data : { title : 'Secretory Information'}},
+    { path: 'employeeInfo/addSecretory' , component: AdminAddSecretoryComponent , data : { title : 'Add Secretory Information'}},
+    { path: 'employeeInfo/editSecretory/:id' , component: AdminEditSecretoryComponent , data : { title : 'Edit Secretory Information'}},
+    { path: 'employeeInfo/wardenInfo' , component: AdminWardenInfoComponent , data : { title : 'Warden Information'}},
+    { path: 'employeeInfo/addWarden' , component: AdminAddWardenComponent , data : { title : 'Add Warden Information'}},
+    { path: 'employeeInfo/editWarden/:id' , component: AdminEditWardenComponent , data : { title : 'Edit Warden Information'}},
+    { path: 'employeeInfo/messStaffInfo' , component: AdminMessStaffInfoComponent , data : { title : 'Mess Staff Information'}},
+    { path: 'employeeInfo/addMessStaff' , component: AdminAddMessStaffComponent , data : { title : 'Add Mess Staff Information'}},
+    { path: 'employeeInfo/editMessStaff/:id' , component: AdminEditMessStaffComponent , data : { title : 'Edit Mess Staff Information'}},
+    { path: 'employeeInfo/securityInfo' , component: AdminSecurityInfoComponent , data : { title : 'Security Guard Information'}},
+    { path: 'employeeInfo/addSecurity' , component: AdminAddSecurityComponent , data : { title : 'Add Security Guard Information'}},
+    { path: 'employeeInfo/editSecurity/:id' , component: AdminEditSecurityComponent , data : { title : 'Edit Security Guard Information'}}
   ]},
   {path : 'home' , component: HomeComponent}
 ]

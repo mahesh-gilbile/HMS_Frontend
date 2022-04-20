@@ -1,0 +1,53 @@
+.mainCard{
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.leftDiv{
+    width:60%
+}
+
+.rightDiv{
+    width: 30%;
+}
+
+.innerCard{
+    background-color: #E2F2FA;
+    margin-top: 10px;
+}
+
+.headerDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.headerDiv1{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.headerDiv2{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+hr{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 0;
+    border-top: 1px solid black;
+}
+
+.buttonDiv{
+    display: flex;
+    flex-direction: row;
+}
+
+.buttonDiv2{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

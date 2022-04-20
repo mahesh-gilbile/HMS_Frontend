@@ -1,1 +1,35 @@
-<p>admin-leave-info works!</p>
+<mat-card class="mainCard">
+    <div class="leftDiv">
+        <mat-card class="innerCard" *ngFor="let l of leaveInfoList">
+            <div class="headerDiv">
+                <div class="headerDiv1">
+                    {{ l.First_Name }} {{ l.Middle_Name }} {{ l.Last_Name }}
+                </div>
+                <div class="headerDiv2">
+                    {{ l.StaffType }}
+                </div>
+            </div>
+            <hr>
+            <div class="contentDiv">
+                <p>From {{ l.FromDate }} To {{ l.ToDate }}</p>
+                <p> Want a Leave For {{ l.Day }} Days</p>
+                <p>Reason :- {{ l.Reason }}</p>
+            </div>
+            <hr>
+            <div class="buttonDiv">
+                <div class="buttonDiv1" *ngIf="l.Status === 'Pending'">
+                    <button class="btn btn-success" style="margin-right:10px" (click)="onStatusChange('Approve' , l.ID)">Approve</button>
+                    <button class="btn btn-danger" (click)="onStatusChange('Reject' , l.ID)">Reject</button>
+                </div>
+                <div class="buttonDiv2" *ngIf="l.Status !== 'Pending'">
+                    <div *ngIf="l.Status === 'Reject'" class="btn btn-danger">Rejected</div>
+                    <div *ngIf="l.Status === 'Approve'" class="btn btn-success">Approved</div>
+                    <div><i>Decision Taken By {{ l.DecisionTakenByType }} {{ l.DecisionTakenByName }}</i></div>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+    <div class="rightDiv">
+        
+    </div>
+</mat-card>
