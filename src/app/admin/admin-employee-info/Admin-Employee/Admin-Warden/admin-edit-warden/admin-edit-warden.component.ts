@@ -1,7 +1,7 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AdminService } from 'src/app/admin/admin.service';
 import { SharedService } from 'src/app/SharedModule/Service/shared.service';
 
@@ -16,12 +16,14 @@ export class AdminEditWardenComponent implements OnInit {
     private fb: FormBuilder,
     private datePipe: DatePipe,
     private router: Router,
+    private route: ActivatedRoute,
     private adminService: AdminService,
     private sharedService: SharedService
   ) { }
 
   formData: FormGroup;
   errorMessage = null;
+  wardenID:any
   gender:any[] = [
     { value : 'MALE' },
     { value : 'FEMALE' },
@@ -39,36 +41,36 @@ export class AdminEditWardenComponent implements OnInit {
       'ln': new FormControl(null , [Validators.required , Validators.minLength(3)]),
       'gender': new FormControl(null , [Validators.required]),
       'add': new FormControl(null , [Validators.required]),
-      'email': new FormControl(null , [Validators.required , Validators.email]),
+      'email': new FormControl({value:null , disabled:true} , [Validators.required , Validators.email]),
       'mobileNo': new FormControl(null , [Validators.required ,  Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]),
-      'dob': new FormControl(null , [Validators.required]),
-      'age': new FormControl(null , [Validators.required]),
+    })
+    this.getData();
+  }
+
+  getData(){
+    this.wardenID = this.route.snapshot.paramMap.get('id');
+    this.adminService.getWardenInfo(this.wardenID)
+    .subscribe(data => {
+      this.formData.controls.fn.setValue(data[1]);
+      this.formData.controls.mn.setValue(data[2]);
+      this.formData.controls.ln.setValue(data[3]);
+      this.formData.controls.gender.setValue(data[4]);
+      this.formData.controls.add.setValue(data[10]);
+      this.formData.controls.email.setValue(data[6]);
+      this.formData.controls.mobileNo.setValue(data[7]);
+      this.sharedService.visibleSpinner(false);
     })
   }
 
   onSave(){
-    const age = +this.formData.get('age').value;
-    if(age >= 18){
-      this.errorMessage = null;
-      if(this.formData.valid){
-        console.log(this.formData.value);
-      }
+    if(this.formData.valid){
+      this.adminService.editWarden(this.formData.value , this.wardenID)
+        .subscribe(data => {
+          alert(data);
+          this.router.navigate(["../../../admin/employeeInfo/wardenInfo"])
+        })
     }else{
-      this.errorMessage = "Please Enter Valid Age."
       return
     }
   }
-
-  calculateAge(){
-    const birtdate = new Date(this.formData.get('dob').value)
-    const timeDiff = Math.abs(Date.now() - birtdate.getTime())
-    const age = Math.floor((timeDiff / (1000 * 3600 * 24)) / 365);
-    this.formData.controls.age.setValue(age);
-  }
-
-  setProperDate(){
-    const dob = this.formData.get('dob').value
-    this.formData.controls.dob.setValue(this.datePipe.transform(dob , 'dd/MM/yyyy'));
-  }
-
 }

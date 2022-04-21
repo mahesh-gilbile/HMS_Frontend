@@ -1,5 +1,7 @@
+import { SharedService } from 'src/app/SharedModule/Service/shared.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AdminService } from '../../../../admin.service';
 
 @Component({
   selector: 'app-admin-secretory-info',
@@ -9,16 +11,20 @@ import { Router } from '@angular/router';
 export class AdminSecretoryInfoComponent implements OnInit {
 
   constructor(
-    private router: Router
+    private router: Router,
+    private adminService: AdminService,
+    private SharedService: SharedService
   ) { }
 
   secretoryData:any[]
   ngOnInit(): void {
-    this.secretoryData = [
-      { id : '1' , name : 'mahesh'},
-      { id : '2' , name : 'ramesh'},
-      { id : '3' , name : 'rajesh'},
-    ]
+    this.SharedService.visibleSpinner(true);
+    this.adminService.getSecretoriesInfo()
+    .subscribe(data => {
+      this.secretoryData = data;
+      // console.log(data);
+      this.SharedService.visibleSpinner(false);
+    })
   }
 
   onAddSecretory(){
@@ -26,7 +32,7 @@ export class AdminSecretoryInfoComponent implements OnInit {
   }
 
   onEditRoute(n){
-    console.log(n)
+    // console.log(n)
     this.router.navigate(['../../../admin/employeeInfo/editSecretory',n])
   }
 

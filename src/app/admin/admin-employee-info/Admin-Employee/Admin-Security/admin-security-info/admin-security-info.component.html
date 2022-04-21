@@ -4,13 +4,13 @@
     </header>
     <div class="middleDiv">
         <mat-card class="infoCard" *ngFor="let d of securityData">
+          <div class="innerDiv">
+            <p>Name :- {{ d.FirstName }} {{ d.MiddleName }} {{ d.LastName }}</p>
+            <p>Email :- {{ d.Gmail }}</p>
+            <p>Contact :- {{ d.MobileNo }}</p>
+          </div>
             <div>
-                <p>{{ d.name }}</p>
-                <p>Email</p>
-                <p>Contact</p>
-            </div>
-            <div>
-                <button class="btn editbtn" (click)="onEditRoute(d.id)">Edit</button>
+                <button class="btn editbtn" (click)="onEditRoute(d.SecurityGuardID)">Edit</button>
             </div>
         </mat-card>
     </div>

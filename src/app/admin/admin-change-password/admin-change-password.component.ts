@@ -34,14 +34,14 @@ export class AdminChangePasswordComponent implements OnInit {
   onSave(){
     if(this.passwordData.valid){
       console.log(this.passwordData.value)
-      // this.secretoryService.changePassword(this.passwordData.value)
-      // .subscribe((data) => {
-      //   alert(data);
-      //   this.router.navigate(['./warden'])
-      // }, error => {
-      //   alert(error.error);
-      //   this.passwordData.reset();
-      // })
+      this.adminService.changePassword(this.passwordData.value)
+      .subscribe((data) => {
+        alert(data);
+        this.router.navigate(['./admin'])
+      }, error => {
+        alert(error.error);
+        this.passwordData.reset();
+      })
     }
   }
 

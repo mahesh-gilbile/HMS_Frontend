@@ -52,6 +52,11 @@ export class AuthService{
           localStorage.setItem('role' , data.role)
           localStorage.setItem('secretoryID' , data.id)
           break;
+          case 'Admin':
+            this.router.navigate(['admin']);
+            localStorage.setItem('role' , data.role)
+            localStorage.setItem('adminID' , data.id)
+            break;
       }
       this.sharedService.visibleSpinner(false);
     },error => {

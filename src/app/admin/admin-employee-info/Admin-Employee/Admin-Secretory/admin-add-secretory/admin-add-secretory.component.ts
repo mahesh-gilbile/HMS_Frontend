@@ -21,7 +21,9 @@ export class AdminAddSecretoryComponent implements OnInit {
   ) { }
 
   formData: FormGroup;
-  errorMessage = null;
+  email:any;
+  errorMessageAge = null;
+  errorMessageEmail = null;
   gender:any[] = [
     { value : 'MALE' },
     { value : 'FEMALE' },
@@ -30,6 +32,19 @@ export class AdminAddSecretoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadForm();
+    this.getEmail();
+  }
+
+  getEmail(){
+    this.sharedService.visibleSpinner(true);
+    this.adminService.getSecretoryEmail()
+    .subscribe(
+      data => {
+        this.email = data;
+        // console.log(data);
+        this.sharedService.visibleSpinner(false);
+      }
+    )
   }
 
   loadForm(){
@@ -48,13 +63,21 @@ export class AdminAddSecretoryComponent implements OnInit {
 
   onSave(){
     const age = +this.formData.get('age').value;
-    if(age >= 18){
-      this.errorMessage = null;
+    const check = this.checkMail(this.formData.get('email').value)
+    if(age >= 18 && !check){
+      this.errorMessageAge = null;
+      this.errorMessageEmail = null;
       if(this.formData.valid){
-        console.log(this.formData.value);
+        this.adminService.addSecretory(this.formData.value , this.setProperDate(this.formData.get('dob').value))
+        .subscribe(data => {
+          alert(data);
+          this.router.navigate(["../../../admin/employeeInfo/secretoryInfo"])
+        })
       }
     }else{
-      this.errorMessage = "Please Enter Valid Age."
+      if(age <= 18){
+        this.errorMessageAge = "Please Enter Valid Age."
+      }
       return
     }
   }
@@ -66,9 +89,19 @@ export class AdminAddSecretoryComponent implements OnInit {
     this.formData.controls.age.setValue(age);
   }
 
-  setProperDate(){
-    const dob = this.formData.get('dob').value
-    this.formData.controls.dob.setValue(this.datePipe.transform(dob , 'dd/MM/yyyy'));
+  setProperDate(date){
+    return this.datePipe.transform(date , 'dd/MM/yyyy');
   }
 
+  checkMail(n){
+    this.errorMessageEmail = null;
+    let flag = false;
+    for(let i = 0 ; i < this.email.length ; i++){
+      if( n === this.email[i].e){
+        flag = true;
+        this.errorMessageEmail = "Email Already Exist."
+      }
+    }
+    return flag;
+  }
 }

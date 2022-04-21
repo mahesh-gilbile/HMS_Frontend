@@ -1,5 +1,7 @@
+import { SharedService } from 'src/app/SharedModule/Service/shared.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AdminService } from '../../../../admin.service';
 
 @Component({
   selector: 'app-admin-warden-info',
@@ -9,16 +11,20 @@ import { Router } from '@angular/router';
 export class AdminWardenInfoComponent implements OnInit {
 
   constructor(
-    private router: Router
+    private router: Router,
+    private adminService: AdminService,
+    private SharedService: SharedService
   ) { }
 
   wardenData:any[]
   ngOnInit(): void {
-    this.wardenData = [
-      { id : '1' , name : 'mahesh'},
-      { id : '2' , name : 'ramesh'},
-      { id : '3' , name : 'rajesh'},
-    ]
+    this.SharedService.visibleSpinner(true);
+    this.adminService.getWardensInfo()
+    .subscribe(data => {
+      this.wardenData = data;
+      // console.log(data);
+      this.SharedService.visibleSpinner(false);
+    })
   }
 
   onAddWarden(){
@@ -26,7 +32,7 @@ export class AdminWardenInfoComponent implements OnInit {
   }
 
   onEditRoute(n){
-    console.log(n)
+    // console.log(n)
     this.router.navigate(['../../../admin/employeeInfo/editWarden',n])
   }
 

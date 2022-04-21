@@ -20,11 +20,23 @@ export class AdminLeaveInfoComponent implements OnInit {
   }
 
   getData(){
-
+    this.sharedService.visibleSpinner(true);
+    this.adminService.getStaffLeavesInfo()
+    .subscribe(
+      data => {
+        this.leaveInfoList = data;
+        this.sharedService.visibleSpinner(false);
+      }
+    )
   }
 
   onStatusChange(status , ID){
-    
+    this.sharedService.visibleSpinner(true);
+    this.adminService.changeStatus(status , ID)
+    .subscribe(data => {
+      // console.log(data);
+      this.getData();
+    })
   }
 
 
