@@ -10,7 +10,8 @@ import { AuthService } from './auth.service';
 export class AuthComponent implements OnInit {
 
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) { }
 
   username;
@@ -43,6 +44,10 @@ export class AuthComponent implements OnInit {
     }else{
       this.loginUser = this.Login[index+1];
     }
+  }
+
+  onRoute(){
+    this.router.navigate(['../stdRegister'])
   }
 
 }

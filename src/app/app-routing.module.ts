@@ -33,10 +33,12 @@ import { WardenLeaveInfoComponent } from "./warden/warden-leave-info/warden-leav
 import { WardenComponent } from "./warden/warden.component";
 import { WardenWingInfoComponent } from "./warden/WardenHostelInfo/warden-wing-info/warden-wing-info.component";
 import { WardenRoomInfoComponent } from "./warden/WardenHostelInfo/warden-room-info/warden-room-info.component";
+
 import { SecretoryComponent } from "./secretory/secretory.component";
 import { SecretoryDashboardComponent } from "./secretory/secretory-dashboard/secretory-dashboard.component";
 import { SecretoryChangePasswordComponent } from "./secretory/secretory-change-password/secretory-change-password.component";
 import { SecretoryApplyLeaveComponent } from "./secretory/secretory-apply-leave/secretory-apply-leave.component";
+
 import { WardenStudentInfoComponent } from "./warden/WardenHostelInfo/warden-student-info/warden-student-info.component";
 import { MessApplyLeaveComponent } from "./mess/mess-apply-leave/mess-apply-leave.component";
 import { SecurityApplyLeaveComponent } from "./security/security-apply-leave/security-apply-leave.component";
@@ -63,10 +65,21 @@ import { AdminEditMessStaffComponent } from "./admin/admin-employee-info/Admin-E
 import { AdminAddSecurityComponent } from "./admin/admin-employee-info/Admin-Employee/Admin-Security/admin-add-security/admin-add-security.component";
 import { AdminEditSecurityComponent } from "./admin/admin-employee-info/Admin-Employee/Admin-Security/admin-edit-security/admin-edit-security.component";
 import { AdminSecurityInfoComponent } from "./admin/admin-employee-info/Admin-Employee/Admin-Security/admin-security-info/admin-security-info.component";
+import { WardenStudentGateEntryComponent } from "./warden/wardenhostelinfo/warden-student-gate-entry/warden-student-gate-entry.component";
+import { SecretoryFeesComponent } from "./secretory/secretory-fees/secretory-fees.component";
+import { SecretoryListStudentComponent } from "./secretory/secretory-list-student/secretory-list-student.component";
+import { WardenStudentListComponent } from "./warden/warden-student-list/warden-student-list.component";
+import { StudentRegisterComponent } from "./auth/student-register/student-register.component";
+import { SecretoryStdRegisterListComponent } from "./secretory/SecretoryRegister/secretory-std-register-list/secretory-std-register-list.component";
+import { SecretoryApproveStdComponent } from "./secretory/SecretoryRegister/secretory-approve-std/secretory-approve-std.component";
+import { SecretoryRoomListComponent } from "./secretory/secretoryroomop/secretory-room-list/secretory-room-list.component";
+import { SecretoryRoomAddComponent } from "./secretory/secretoryroomop/secretory-room-add/secretory-room-add.component";
+import { SecretoryRoomAllotmentComponent } from "./secretory/secretoryroomop/secretory-room-allotment/secretory-room-allotment.component";
 
 const appRoutes: Routes = [
   { path: '' , redirectTo: 'auth' , pathMatch: 'full'},
   { path: 'auth' , component: AuthComponent },
+  { path: 'stdRegister' , component: StudentRegisterComponent },
   { path: 'warden' , component: WardenComponent ,children:[
     { path: '' , component: WardenDashboardComponent , data : { title: 'Personal Details'}},
     { path: 'allotedDuties' , component: WardenDutiesComponent , data : { title: 'Alloted Duties'}},
@@ -76,7 +89,9 @@ const appRoutes: Routes = [
     { path: 'stdInfo/:id' , component: WardenStudentInfoComponent , data: { title: 'Student Information'}},
     { path: 'leaveInfo' , component: WardenLeaveInfoComponent , data: { title: 'Leave Information'}},
     { path : 'changepassword' , component: WardenChangePasswordComponent , data: { title : 'Change Password'}},
-    { path: 'leaves' , component: WardenApplyLeaveComponent , data : { title : 'Leaves Information'}}
+    { path: 'leaves' , component: WardenApplyLeaveComponent , data : { title : 'Leaves Information'}},
+    { path: 'gateHistory/:id' , component: WardenStudentGateEntryComponent , data : { title : 'Gate Entry Information'}},
+    { path: 'stdList' , component: WardenStudentListComponent , data : { title : 'Student List'}}
   ]},
   { path: 'mess' , component: MessComponent ,children :[
     { path : '' , component: MessDashboardComponent , data : { title : 'Personal Details'}},
@@ -110,7 +125,14 @@ const appRoutes: Routes = [
   { path: 'secretory' , component: SecretoryComponent , children : [
     { path: '' , component: SecretoryDashboardComponent , data : { title : 'Personal Details'}},
     { path: 'changepassword' , component: SecretoryChangePasswordComponent , data : { title : 'Change Password'}},
-    { path: 'leaves' , component: SecretoryApplyLeaveComponent , data : { title : 'Leaves Information'}}
+    { path: 'leaves' , component: SecretoryApplyLeaveComponent , data : { title : 'Leaves Information'}},
+    { path: 'stdList' , component: SecretoryListStudentComponent , data : { title : 'Student Information'}},
+    { path: 'fees/:id' , component: SecretoryFeesComponent , data : { title : 'Fees Details'}},
+    { path: 'stdRegisterList' , component: SecretoryStdRegisterListComponent , data : { title : 'Register Student List'}},
+    { path: 'stdRegisterApprove/:id' , component: SecretoryApproveStdComponent , data : { title : 'Register Student Information'}},
+    { path: 'roomList' , component: SecretoryRoomListComponent , data : { title : 'Hostel Room List'}},
+    { path: 'addRoom' , component: SecretoryRoomAddComponent , data : { title : 'Add Hostel Room List'}},
+    { path: 'roomalt/:id' , component: SecretoryRoomAllotmentComponent , data : { title : 'Room Allotment to Student'}},
   ]},
   { path: 'admin' , component: AdminComponent , children: [
     { path : '' , component: AdminDashboardComponent , data : { title : 'Personal Details'}},

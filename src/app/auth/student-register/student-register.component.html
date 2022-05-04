@@ -1,0 +1,184 @@
+<div class="mainDiv">
+    <div class="head">
+        <button class="btn btn-primary" (click)="onRoute()">Login</button>
+    </div>
+    <mat-card class="outerCard">
+        <mat-card class="mainCard">
+            <form [formGroup]="formData" (ngSubmit)="onSave()">
+                <div class="header">Student Information</div>
+                <div class="nameDiv">
+                    <mat-form-field class="example-full-width hey" appearance="fill">
+                        <mat-label>First Name</mat-label>
+                        <input matInput type="text" formControlName="StdFN">
+                        <span *ngIf="!formData.get('StdFN').valid && formData.get('StdFN').touched" class="help-block" style="color:brown;font-size: 12px;"> Please Enter First Name</span>
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width hey" appearance="fill">
+                        <mat-label>Middle Name</mat-label>
+                        <input matInput type="text" formControlName="StdMN">
+                        <!-- <span *ngIf="!formData.get('mn').valid && formData.get('mn').touched" class="help-block" style="color:brown;font-size: 12px;"> Please Enter Middle Name</span> -->
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width hey" appearance="fill">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput type="text" formControlName="StdLN">
+                        <span *ngIf="!formData.get('StdLN').valid && formData.get('StdLN').touched" class="help-block" style="color:brown;font-size: 12px;"> Please Enter Last Name</span>
+                    </mat-form-field>
+                </div>
+                <div class="div2">
+                    <mat-form-field appearance="fill" class="hey1">
+                        <mat-label>Gender</mat-label>
+                        <mat-select formControlName="StdGender">
+                          <mat-option *ngFor="let g of gender" [value]="g.value">
+                            {{g.value}}
+                          </mat-option>
+                        </mat-select>
+                        <span *ngIf="!formData.get('StdGender').valid && formData.get('StdGender').touched" class="help-block" style="color:brown;font-size: 12px;"> Please Select Gender</span>
+                      </mat-form-field>
+                      <mat-form-field class="example-full-width hey1" appearance="fill">
+                        <mat-label>Birth Date</mat-label>
+                        <input matInput type="Date" formControlName="StdDOB" (change)="calculateAge()">
+                        <span *ngIf="!formData.get('StdDOB').valid && formData.get('StdDOB').touched" class="help-block" style="color:brown;font-size: 12px;"> Please Enter Birthdate</span>
+                        <!-- <span *ngIf="errorMessageAge !== null" class="help-block" style="color:brown;font-size: 12px;"> Please Enter Valid Date</span> -->
+                    </mat-form-field>
+                </div>
+                <div class="div3">
+                    <mat-form-field class="example-full-width hey1" appearance="fill">
+                        <mat-label>Email</mat-label>
+                        <input matInput type="email" formControlName="StdEmail">
+                        <span *ngIf="!formData.get('StdEmail').valid && formData.get('StdEmail').touched && !formData.get('StdEmail').errors?.email" class="help-block" style="color:brown;font-size: 12px;"> Please Enter Email</span>
+                        <span *ngIf="!formData.get('StdEmail').valid && formData.get('StdEmail').errors?.email" class="help-block" style="color:brown;font-size: 12px;"> Email Address in Invalid</span>
+                        <span *ngIf="errorMessageEmail !== null" class="help-block" style="color:brown;font-size: 12px;"> {{ errorMessageEmail }}</span>
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width hey1" appearance="fill">
+                        <mat-label> Mobile Number</mat-label>
+                        <input matInput type="text" formControlName="StdMobileNumber">
+                        <span *ngIf="!formData.get('StdMobileNumber').valid && formData.get('StdMobileNumber').touched && !formData.get('StdMobileNumber').errors?.pattern" class="help-block" style="color:brown;font-size: 12px;"> Please Enter Mobile Number</span>
+                        <span *ngIf="!formData.get('StdMobileNumber').valid && formData.get('StdMobileNumber').errors?.pattern" class="help-block" style="color:brown;font-size: 12px;"> Mobile Number is Invalid</span>
+                    </mat-form-field>
+                </div>
+                <div class="div4">
+                    <mat-form-field class="example-full-width hey1" appearance="fill">
+                        <mat-label>Address</mat-label>
+                        <input matInput type="text" formControlName="StdAddress">
+                        <span *ngIf="!formData.get('StdAddress').valid && formData.get('StdAddress').touched" class="help-block" style="color:brown;font-size: 12px;"> Please Enter Address</span>
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width hey1" appearance="fill">
+                        <mat-label>Course</mat-label>
+                        <input matInput type="text" formControlName="StdCitizen">
+                        <span *ngIf="!formData.get('StdCitizen').valid && formData.get('StdCitizen').touched" class="help-block" style="color:brown;font-size: 12px;"> Please Enter Data</span>
+                    </mat-form-field>
+                </div>
+                <hr>
+                <div class="header">Student Course Information</div>
+                <div class="div5">
+                    <mat-form-field appearance="fill" class="hey">
+                        <mat-label>Category</mat-label>
+                        <mat-select formControlName="StdCategory">
+                          <mat-option *ngFor="let g of category" [value]="g.value">
+                            {{g.value}}
+                          </mat-option>
+                        </mat-select>
+                        <span *ngIf="!formData.get('StdCategory').valid && formData.get('StdCategory').touched" class="help-block" style="color:brown;font-size: 12px;"> Please Select Category</span>
+                      </mat-form-field>
+                    <mat-form-field class="example-full-width hey" appearance="fill">
+                        <mat-label>Citizen</mat-label>
+                        <input matInput type="text" formControlName="StdCourse">
+                        <span *ngIf="!formData.get('StdCourse').valid && formData.get('StdCourse').touched" class="help-block" style="color:brown;font-size: 12px;"> Please Enter Course</span>
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width hey" appearance="fill">
+                        <mat-label>Branch</mat-label>
+                        <input matInput type="text" formControlName="StdBranch">
+                        <span *ngIf="!formData.get('StdBranch').valid && formData.get('StdBranch').touched" class="help-block" style="color:brown;font-size: 12px;"> Please Enter Branch</span>
+                    </mat-form-field>
+                </div>
+                <div class="div6">
+                    <mat-form-field class="example-full-width hey1" appearance="fill">
+                        <mat-label>Course Duration</mat-label>
+                        <input matInput type="number" formControlName="StdCourseDuration">
+                        <span *ngIf="!formData.get('StdCourseDuration').valid && formData.get('StdCourseDuration').touched" class="help-block" style="color:brown;font-size: 12px;"> Please Enter Course Duration</span>
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width hey1" appearance="fill">
+                        <mat-label>Year</mat-label>
+                        <input matInput type="text" formControlName="StdYear">
+                        <span *ngIf="!formData.get('StdYear').valid && formData.get('StdYear').touched" class="help-block" style="color:brown;font-size: 12px;"> Please Enter Year</span>
+                    </mat-form-field>
+                </div>
+                <hr>
+                <div class="header">Guardian Information</div>
+                <div class="nameDiv">
+                    <mat-form-field class="example-full-width hey" appearance="fill">
+                        <mat-label>First Name</mat-label>
+                        <input matInput type="text" formControlName="GuardianFN">
+                        <span *ngIf="!formData.get('GuardianFN').valid && formData.get('GuardianFN').touched" class="help-block" style="color:brown;font-size: 12px;"> Please Enter First Name</span>
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width hey" appearance="fill">
+                        <mat-label>Middle Name</mat-label>
+                        <input matInput type="text" formControlName="GuardianMN">
+                        <!-- <span *ngIf="!formData.get('mn').valid && formData.get('mn').touched" class="help-block" style="color:brown;font-size: 12px;"> Please Enter Middle Name</span> -->
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width hey" appearance="fill">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput type="text" formControlName="GuardianLN">
+                        <span *ngIf="!formData.get('GuardianLN').valid && formData.get('GuardianLN').touched" class="help-block" style="color:brown;font-size: 12px;"> Please Enter Last Name</span>
+                    </mat-form-field>
+                </div>
+                <div class="div2">
+                    <mat-form-field appearance="fill" class="hey1">
+                        <mat-label>Gender</mat-label>
+                        <mat-select formControlName="GuardianGender">
+                          <mat-option *ngFor="let g of gender" [value]="g.value">
+                            {{g.value}}
+                          </mat-option>
+                        </mat-select>
+                        <span *ngIf="!formData.get('GuardianGender').valid && formData.get('GuardianGender').touched" class="help-block" style="color:brown;font-size: 12px;"> Please Select Gender</span>
+                      </mat-form-field>
+                      <mat-form-field class="example-full-width hey1" appearance="fill">
+                        <mat-label>Birth Date</mat-label>
+                        <input matInput type="Date" formControlName="GuardianDOB" (change)="calculateAgeGuardian()">
+                        <span *ngIf="!formData.get('GuardianDOB').valid && formData.get('GuardianDOB').touched" class="help-block" style="color:brown;font-size: 12px;"> Please Enter Birthdate</span>
+                        <!-- <span *ngIf="errorMessageAge !== null" class="help-block" style="color:brown;font-size: 12px;"> Please Enter Valid Date</span> -->
+                    </mat-form-field>
+                </div>
+                <div class="div3">
+                    <mat-form-field class="example-full-width hey1" appearance="fill">
+                        <mat-label>Relation with Student</mat-label>
+                        <input matInput type="text" formControlName="GuardianRelation">
+                        <span *ngIf="!formData.get('GuardianRelation').valid && formData.get('GuardianRelation').touched" class="help-block" style="color:brown;font-size: 12px;"> Please Enter Relation with Student</span>
+                        <!-- <span *ngIf="errorMessageEmail !== null" class="help-block" style="color:brown;font-size: 12px;"> {{ errorMessageEmail }}</span> -->
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width hey1" appearance="fill">
+                        <mat-label>Occupation</mat-label>
+                        <input matInput type="text" formControlName="GuardianOccupation">
+                        <span *ngIf="!formData.get('GuardianOccupation').valid && formData.get('GuardianOccupation').touched" class="help-block" style="color:brown;font-size: 12px;"> Please Enter Occupation</span>
+                    </mat-form-field>
+                </div>
+                <div class="div3">
+                    <mat-form-field class="example-full-width hey1" appearance="fill">
+                        <mat-label>Email</mat-label>
+                        <input matInput type="email" formControlName="GuardianEmail">
+                        <span *ngIf="!formData.get('GuardianEmail').valid && formData.get('GuardianEmail').touched && !formData.get('GuardianEmail').errors?.email" class="help-block" style="color:brown;font-size: 12px;"> Please Enter Email</span>
+                        <span *ngIf="!formData.get('GuardianEmail').valid && formData.get('GuardianEmail').errors?.email" class="help-block" style="color:brown;font-size: 12px;"> Email Address in Invalid</span>
+                        <!-- <span *ngIf="errorMessageEmail !== null" class="help-block" style="color:brown;font-size: 12px;"> {{ errorMessageEmail }}</span> -->
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width hey1" appearance="fill">
+                        <mat-label> Mobile Number</mat-label>
+                        <input matInput type="text" formControlName="GuardianMobileNumber">
+                        <span *ngIf="!formData.get('GuardianMobileNumber').valid && formData.get('GuardianMobileNumber').touched && !formData.get('GuardianMobileNumber').errors?.pattern" class="help-block" style="color:brown;font-size: 12px;"> Please Enter Mobile Number</span>
+                        <span *ngIf="!formData.get('GuardianMobileNumber').valid && formData.get('GuardianMobileNumber').errors?.pattern" class="help-block" style="color:brown;font-size: 12px;"> Mobile Number is Invalid</span>
+                    </mat-form-field>
+                </div>
+                <div class="div4">
+                    <mat-form-field class="example-full-width hey1" appearance="fill">
+                        <mat-label>Address</mat-label>
+                        <input matInput type="text" formControlName="GuardianAddress">
+                        <span *ngIf="!formData.get('GuardianAddress').valid && formData.get('GuardianAddress').touched" class="help-block" style="color:brown;font-size: 12px;"> Please Enter Address</span>
+                    </mat-form-field>
+                </div>
+                <hr>
+                <div class="btnDiv">
+                    <button class="btn addBtn" type="submit" [disabled]="!formData.valid">Register</button>
+                </div>
+            </form>
+        </mat-card>
+        
+    </mat-card>
+</div>

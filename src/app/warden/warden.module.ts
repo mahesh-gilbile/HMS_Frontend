@@ -10,12 +10,14 @@ import { WardenDutiesComponent } from './warden-duties/warden-duties.component';
 import { WardenLeaveInfoComponent } from './warden-leave-info/warden-leave-info.component';
 import { WardenHostelInfoComponent } from './WardenHostelInfo/warden-hostel-info/warden-hostel-info.component';
 import { WardenChangePasswordComponent } from './warden-change-password/warden-change-password.component';
-import { HttpClientModule } from "@angular/common/http";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { WardenWingInfoComponent } from './WardenHostelInfo/warden-wing-info/warden-wing-info.component';
 import { WardenRoomInfoComponent } from './WardenHostelInfo/warden-room-info/warden-room-info.component';
 import { WardenStudentInfoComponent } from './WardenHostelInfo/warden-student-info/warden-student-info.component';
 import { WardenApplyLeaveComponent } from './warden-apply-leave/warden-apply-leave.component';
+import { WardenStudentGateEntryComponent } from './wardenhostelinfo/warden-student-gate-entry/warden-student-gate-entry.component';
+import { WardenStudentListComponent } from './warden-student-list/warden-student-list.component';
+import { MyPipesModule } from "../SharedModule/sharedModule";
 
 @NgModule({
   declarations:[
@@ -30,14 +32,17 @@ import { WardenApplyLeaveComponent } from './warden-apply-leave/warden-apply-lea
     WardenWingInfoComponent,
     WardenRoomInfoComponent,
     WardenStudentInfoComponent,
-    WardenApplyLeaveComponent
+    WardenApplyLeaveComponent,
+    WardenStudentGateEntryComponent,
+    WardenStudentListComponent,
   ],
   imports:[
     CommonModule,
     AppMaterialModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MyPipesModule
   ],
   providers : [
     DatePipe

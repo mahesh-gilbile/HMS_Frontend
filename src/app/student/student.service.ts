@@ -102,5 +102,11 @@ export class StudentService{
     const id = this.getStudentId();
     return this.http.get<any>(BACKENDURL_Student + 'getGateHistory/' + id);
   }
+
+  getStudentFees(){
+    const id = this.getStudentId();
+    return this.http.get<any>(BACKENDURL_Student + 'getFees/' + id);
+
+  }
   
 }

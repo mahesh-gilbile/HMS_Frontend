@@ -32,10 +32,10 @@ export class SecretoryDashboardComponent implements OnInit {
       this.secretoryInfo.mn = data[2];
       this.secretoryInfo.ln = data[3];
       this.secretoryInfo.gender = data[5];
-      this.secretoryInfo.email = data[7];
-      this.secretoryInfo.DOB = data[9].substring(0,2) + " " + this.sharedService.getMonth(data[9].substring(3,5)) + " " + data[9].substring(6,10);
-      this.secretoryInfo.mobn = data[8];
-      this.secretoryInfo.add = data[10];
+      this.secretoryInfo.email = data[6];
+      this.secretoryInfo.DOB = data[8].substring(0,2) + " " + this.sharedService.getMonth(data[8].substring(3,5)) + " " + data[8].substring(6,10);
+      this.secretoryInfo.mobn = data[7];
+      this.secretoryInfo.add = data[9];
       this.sharedService.visibleSpinner(false);
     })
   }

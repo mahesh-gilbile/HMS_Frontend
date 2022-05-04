@@ -70,4 +70,12 @@ export class AuthService{
   onLogout(){
     localStorage.clear();
   }
+
+  getEmail(){
+    return this.http.get<any>(BACKENDURL + 'getEmail')
+  }
+
+  register(data){
+    return this.http.post<any>(BACKENDURL + 'register' , data);
+  }
 }

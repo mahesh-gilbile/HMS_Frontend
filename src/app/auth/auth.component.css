@@ -15,8 +15,14 @@ mat-card{
   margin-top: 25px;
 } */
 
+header{
+  text-align: right;
+  padding-top: 1%;
+  margin-right: 1%;
+}
+
 .left{
-  margin: 10% 0px 0px 10%;
+  margin: 7% 0px 0px 10%;
 }
 
 

@@ -9,6 +9,15 @@ import { SecretoryChangePasswordComponent } from './secretory-change-password/se
 import { SecretoryHeaderComponent } from './Secretory-Layout/secretory-header/secretory-header.component';
 import { SecretorySideNavComponent } from './Secretory-Layout/secretory-side-nav/secretory-side-nav.component';
 import { SecretoryApplyLeaveComponent } from './secretory-apply-leave/secretory-apply-leave.component';
+import { SecretoryFeesComponent } from './secretory-fees/secretory-fees.component';
+import { SecretoryListStudentComponent } from './secretory-list-student/secretory-list-student.component';
+import { MyPipesModule } from "../SharedModule/sharedModule";
+import { SecretoryStdRegisterListComponent } from './SecretoryRegister/secretory-std-register-list/secretory-std-register-list.component';
+import { SecretoryApproveStdComponent } from './SecretoryRegister/secretory-approve-std/secretory-approve-std.component';
+import { SecretoryRoomListComponent } from './secretoryroomop/secretory-room-list/secretory-room-list.component';
+import { SecretoryRoomAddComponent } from './secretoryroomop/secretory-room-add/secretory-room-add.component';
+import { SecretoryRoomEditComponent } from './secretoryroomop/secretory-room-edit/secretory-room-edit.component';
+import { SecretoryRoomAllotmentComponent } from './secretoryroomop/secretory-room-allotment/secretory-room-allotment.component';
 
 @NgModule({
     declarations : [
@@ -17,7 +26,15 @@ import { SecretoryApplyLeaveComponent } from './secretory-apply-leave/secretory-
         SecretoryChangePasswordComponent,
         SecretoryHeaderComponent,
         SecretorySideNavComponent,
-        SecretoryApplyLeaveComponent
+        SecretoryApplyLeaveComponent,
+        SecretoryFeesComponent,
+        SecretoryListStudentComponent,
+        SecretoryStdRegisterListComponent,
+        SecretoryApproveStdComponent,
+        SecretoryRoomListComponent,
+        SecretoryRoomAddComponent,
+        SecretoryRoomEditComponent,
+        SecretoryRoomAllotmentComponent
     ],
 
     imports : [
@@ -25,7 +42,8 @@ import { SecretoryApplyLeaveComponent } from './secretory-apply-leave/secretory-
         AppMaterialModule,
         AppRoutingModule,
         ReactiveFormsModule,
-        FormsModule
+        FormsModule,
+        MyPipesModule
     ],
     providers : [
         DatePipe

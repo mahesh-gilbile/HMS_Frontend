@@ -4,6 +4,7 @@ import { environment } from "src/environments/environment";
 
 const BACKENDURL_Warden = environment.apiURL + "warden/";
 const BACKENDURL_Student = environment.apiURL + "student/";
+const BACKENDURL_Secretory = environment.apiURL + "secretory/";
 
 @Injectable({
   providedIn : 'root'
@@ -49,6 +50,10 @@ export class WardenService{
     return this.http.get<any>(BACKENDURL_Student + id);
   }
 
+  getGateHistory(id){
+    return this.http.get<any>(BACKENDURL_Warden + 'getGateHistory/' + id);
+  }
+
   applyForLeaves(n:any){
     const id = this.getWardenID()
     const data = {
@@ -79,5 +84,9 @@ export class WardenService{
     const id = this.getWardenID();
     return this.http.post<any>(BACKENDURL_Warden + 'LeaveDecision/' + id , data);
   }
+
+  getStudentList(){
+    return this.http.get<any>(BACKENDURL_Secretory + 'getStdList');
+ }
 
 }

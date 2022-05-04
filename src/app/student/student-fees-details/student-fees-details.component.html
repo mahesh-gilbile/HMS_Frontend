@@ -1,67 +1,60 @@
-<div class="main-Div">
-  <mat-card class="main-mat-card">
-    <mat-card class="mat-cards left">
-      <div class="photo">
-
-      </div>
-      <div class="admission space" style="color: #878787;">
-        ADMISSION NO 2018PE0000
-      </div>
-      <div class="name space">
-        LNAME FNAME MNAME
-      </div>
-      <div class="DOB space">
-        DATE OF BIRTH 00/00/00
-      </div>
-      <div class="year space">
-        FORTH YEAR
-      </div>
-      <div class="address space">
-        ADDRESS
-      </div>
-      <div class="mobileNo space">
-        MOBILE +910000000000
-      </div>
-    </mat-card>
-    <mat-card class="mat-cards right">
-      <div class="fees">
-        <table>
-          <tr class="firstRow">
-            <td>YEAR</td>
-            <td>FEES</td>
-            <td>AMOUNT</td>
-          </tr>
-          <tr class="secondRow">
-            <td>2018</td>
-            <td>MESS FEES</td>
-            <td>0000.00</td>
-          </tr>
-        </table>
-        <button class="btn btn-primary">PAY FEES ONLINE</button>
-      </div>
-      <hr style="color: #ffff00; height: 1px;">
-      <div class="balFees">
-        <p style="font-size: 17px;font-weight: 550;"><span style="color: #878787">BALANCE FEES :- </span>0000.00</p>
-        <p style="width: 70%;margin: auto;color:#878787;font-weight: 550;">Note :- In case of any error during bank transaction ,please wait for 72 hour before initiating a new transaction</p>
-      </div>
-      <div class="transaction-method">
-        <div class="subDiv">
-          <img src="assets/Logo/Student/Fees/credit-card (1).png" class="logo">
-          CARD
-        </div>
-        <div class="subDiv">
-          <img src="assets/Logo/Student/Fees/online-business.png" class="logo">
-          NETBANKING
-        </div>
-        <div class="subDiv">
-          <img src="assets/Logo/Student/Fees/wallet.png" class="logo">
-          WALLET
-        </div>
-        <div class="subDiv">
-          <img src="assets/Logo/Student/Fees/credit-card (1).png" class="logo">
-          UPI/QR
-        </div>
-      </div>
-    </mat-card>
+<mat-card class="outerCard">
+  <mat-card class="innerCard">
+    <p style="font-size: 20px;font-weight: 550;margin-top: 10px;"><span style="color: #878787">Fees Pending:- </span>{{ feesPending() | currency : 'INR' }}</p>
+    <hr style="border: 1px solid lightgray">
+    <div class="fees">
+      <p class="text">Hostel Fees</p>
+      <table>
+        <tr class="firstRow">
+          <td>Total Hostel Fees</td>
+          <td>Year</td>
+        </tr>
+        <tr class="secondRow" *ngFor="let d of hostelFees">
+          <td>{{ d.Amount | currency: 'INR'}}</td>
+          <td>{{ d.Year }}</td>
+        </tr>
+      </table>
+      <p style="font-size: 17px;font-weight: 550;margin-top: 10px;"><span style="color: #878787">Total Hostel Fees :- </span>{{ getTotalHostelFees() | currency : 'INR'}}</p>
+    </div>
+    <hr style="border: 1px solid lightgray">
+    <div class="fees">
+      <p class="text">Mess Fees</p>
+      <table>
+        <tr class="firstRow">
+          <td>Food_Type</td>
+          <td>Count</td>
+          <td>Amount</td>
+          <td>Total Amount</td>
+        </tr>
+        <tr class="secondRow" *ngFor="let m of messFees">
+          <td>{{ m.Type }}</td>
+          <td>{{ m.Count }}</td>
+          <td>{{ m.Amount | currency: 'INR'}}</td>
+          <td>{{ m.TotalAmount | currency: 'INR'}}</td>
+        </tr>
+      </table>
+      <p style="font-size: 17px;font-weight: 550;margin-top: 10px;"><span style="color: #878787">Total Mess Fees :- </span>{{ getTotalMessFees() | currency : 'INR'}}</p>
+    </div>
+    <hr style="border: 1px solid lightgray">
+    <div class="fees">
+      <p class="text">Fees Paid</p>
+      <table>
+        <tr class="firstRow">
+          <td>Date</td>
+          <td>Time</td>
+          <td>Amount</td>
+          <td>Payment Method</td>
+          <td>Payment Done By Secretory</td>
+        </tr>
+        <tr class="secondRow" *ngFor="let p of feesPaid">
+          <td>{{ p.Date }}</td>
+          <td>{{ p.Time }}</td>
+          <td>{{ p.Amount | currency : 'INR'}}</td>
+          <td>{{ p.PaymentMethod }}</td>
+          <td>{{ p.SecretoryFN }} {{ p.SecretoryMN }} {{ p.SecretoryLN }}</td>
+        </tr>
+      </table>
+      <p style="font-size: 17px;font-weight: 550;margin-top: 10px;"><span style="color: #878787">Total Fees Paid :- </span>{{ getTotalFeesPaid() | currency : 'INR'}}</p>
+    </div>
   </mat-card>
-</div>
+</mat-card>

@@ -1,38 +1,14 @@
-.main-Div{
-  /* margin-top: 25px; */
+.outerCard{
+  margin: 15px;
 }
 
-.main-mat-card{
-  margin: 30px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.mat-cards{
+.innerCard{
   background-color: #E2F2FA;
-  width: 49%;
-}
-
-
-.left{
-  display: flex;
-  flex-direction: column;
   text-align: center;
-  padding: 60px;
 }
 
-.photo{
-  width: 90px;
-  height: 90px;
-  border-radius: 12px;
-  background-color: white;
-  margin: auto;
-}
-
-.space{
-  margin-top: 25px;
-  font-size: 18px;
-  font-weight: 500;
+.fees{
+  margin-bottom: 20px;
 }
 
 .firstRow{
@@ -40,7 +16,7 @@
 }
 
 .firstRow > td{
-  padding: 18px;
+  padding: 10px;
   font-size: 17px;
   font-weight: 500;
   color: white;
@@ -52,50 +28,17 @@
 }
 
 .secondRow > td{
-  padding: 18px;
+  padding: 10px;
   font-size: 17px;
   font-weight: 500;
   color: black;
-}
-
-.right{
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  padding: 60px;
-  padding-bottom: 0px;
 }
 
 table{
   margin: auto;
 }
 
-.btn{
-  margin-top: 10px;
-  font-size: 17px;
-  font-weight: 500;
-  background-color: #14238C;
-  padding: 7px 20px 7px 20px;
-  border-radius: 10px;
-}
-
-.transaction-method{
-  margin-top: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.logo{
-  width: 75px;
-  height: 75px;
-}
-
-.subDiv{
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-  font-size: 15px;
-  font-weight: 550;
-  line-height: 25px;
+.text{
+  font-size: 20px;
+  font-weight: 600;
 }

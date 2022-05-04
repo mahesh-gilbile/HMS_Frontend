@@ -1,0 +1,14 @@
+.outerCard{
+    margin: 10px;
+}
+
+.innerCard{
+    background-color: #E2F2FA;
+}
+
+.mainCard{
+    background-color: #97ABDC;
+    margin-bottom: 10px;
+    font-size: 17px;
+    font-weight: 550;
+}

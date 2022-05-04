@@ -31,7 +31,7 @@ export class WardenRoomInfoComponent implements OnInit {
       this.wingName = data['WingName'];
       this.hostelName = data['HostelName'];
       this.roomMemberDetails = data['RoomMembers'];
-      console.log(this.roomMemberDetails)
+      // console.log(this.roomMemberDetails)
       this.sharedService.visibleSpinner(false);
     })
   }

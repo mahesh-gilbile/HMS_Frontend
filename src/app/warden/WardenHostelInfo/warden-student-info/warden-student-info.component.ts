@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Student } from 'src/app/SharedModule/models/student.model';
 import { SharedService } from 'src/app/SharedModule/Service/shared.service';
@@ -15,7 +15,8 @@ export class WardenStudentInfoComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private wardenService: WardenService,
-    private sharedService: SharedService
+    private sharedService: SharedService,
+    private router: Router
   ) { }
 
   stdID : any;
@@ -69,7 +70,10 @@ export class WardenStudentInfoComponent implements OnInit {
   
   // console.log(this.studentInfo);
   this.sharedService.visibleSpinner(false);
-})
+    })
   }
 
+  onGate(){
+    this.router.navigate(['../../../warden/gateHistory',this.stdID])
+  }
 }

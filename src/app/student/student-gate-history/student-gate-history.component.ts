@@ -20,7 +20,8 @@ export class StudentGateHistoryComponent implements OnInit {
     this.sharedService.visibleSpinner(true);
     this.studentService.getGateHistory()
     .subscribe(data => {
-      this.gateHistory = data.reverse();
+      console.log(data)
+      this.gateHistory = data.GateInfo.reverse();
       this.sharedService.visibleSpinner(false);
     })
   }
