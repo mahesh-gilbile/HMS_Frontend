@@ -75,6 +75,7 @@ import { SecretoryApproveStdComponent } from "./secretory/SecretoryRegister/secr
 import { SecretoryRoomListComponent } from "./secretory/secretoryroomop/secretory-room-list/secretory-room-list.component";
 import { SecretoryRoomAddComponent } from "./secretory/secretoryroomop/secretory-room-add/secretory-room-add.component";
 import { SecretoryRoomAllotmentComponent } from "./secretory/secretoryroomop/secretory-room-allotment/secretory-room-allotment.component";
+import { SecretoryAllStdAllotmentComponent } from "./secretory/secretory-all-std-allotment/secretory-all-std-allotment.component";
 
 const appRoutes: Routes = [
   { path: '' , redirectTo: 'auth' , pathMatch: 'full'},
@@ -133,6 +134,7 @@ const appRoutes: Routes = [
     { path: 'roomList' , component: SecretoryRoomListComponent , data : { title : 'Hostel Room List'}},
     { path: 'addRoom' , component: SecretoryRoomAddComponent , data : { title : 'Add Hostel Room List'}},
     { path: 'roomalt/:id' , component: SecretoryRoomAllotmentComponent , data : { title : 'Room Allotment to Student'}},
+    { path: 'allStdAlt' , component: SecretoryAllStdAllotmentComponent , data : { title : 'All Student Allotment Room at One Time'}},
   ]},
   { path: 'admin' , component: AdminComponent , children: [
     { path : '' , component: AdminDashboardComponent , data : { title : 'Personal Details'}},

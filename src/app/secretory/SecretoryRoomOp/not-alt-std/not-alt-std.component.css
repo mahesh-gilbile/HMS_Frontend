@@ -1,0 +1,31 @@
+.head{
+    font-size: 18px;
+    font-weight: 550;
+    text-align: center;
+}
+
+.card1{
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.checkDiv{
+    width: 10%;
+}
+
+.nameDiv , .emailDiv , .mnDiv{
+    width: 75%;
+}
+
+.Message{
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.btnDiv{
+    text-align: center;
+    margin-top: 10px;
+}

@@ -108,5 +108,10 @@ export class StudentService{
     return this.http.get<any>(BACKENDURL_Student + 'getFees/' + id);
 
   }
+
+  checkStdAltAPI(){
+    const id = this.getStudentId();
+    return this.http.get<any>(BACKENDURL_Student + 'checkstdAlot/' + id);
+  }
   
 }

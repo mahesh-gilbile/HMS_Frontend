@@ -18,6 +18,8 @@ import { SecretoryRoomListComponent } from './secretoryroomop/secretory-room-lis
 import { SecretoryRoomAddComponent } from './secretoryroomop/secretory-room-add/secretory-room-add.component';
 import { SecretoryRoomEditComponent } from './secretoryroomop/secretory-room-edit/secretory-room-edit.component';
 import { SecretoryRoomAllotmentComponent } from './secretoryroomop/secretory-room-allotment/secretory-room-allotment.component';
+import { NotAltStdComponent } from './secretoryroomop/not-alt-std/not-alt-std.component';
+import { SecretoryAllStdAllotmentComponent } from './secretory-all-std-allotment/secretory-all-std-allotment.component';
 
 @NgModule({
     declarations : [
@@ -34,7 +36,9 @@ import { SecretoryRoomAllotmentComponent } from './secretoryroomop/secretory-roo
         SecretoryRoomListComponent,
         SecretoryRoomAddComponent,
         SecretoryRoomEditComponent,
-        SecretoryRoomAllotmentComponent
+        SecretoryRoomAllotmentComponent,
+        NotAltStdComponent,
+        SecretoryAllStdAllotmentComponent
     ],
 
     imports : [

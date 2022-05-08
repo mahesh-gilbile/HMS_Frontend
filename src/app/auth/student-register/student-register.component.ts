@@ -32,13 +32,13 @@ export class StudentRegisterComponent implements OnInit {
   ]
 
   category:any[] = [
-    { value : 'FE' },
-    { value : 'SE' },
-    { value : 'TE'},
-    { value : 'BE' },
-    { value : 'FOREGIN' },
-    { value : 'HEALTH ISSUES'},
-    { value : 'PRIVILEDGE(SINGLE BED)'}
+    { value : 'Fe' },
+    { value : 'Se' },
+    { value : 'Te'},
+    { value : 'Be' },
+    { value : 'F' },
+    { value : 'Hi'},
+    { value : 'S'}
   ]
 
 

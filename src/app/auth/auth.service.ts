@@ -78,4 +78,30 @@ export class AuthService{
   register(data){
     return this.http.post<any>(BACKENDURL + 'register' , data);
   }
+
+  autoLogin(){
+    const role = localStorage.getItem('role');
+    if(role !== null){
+      switch(role){
+        case 'Student':
+          this.router.navigate(['student']);
+          break;
+        case 'Mess':
+          this.router.navigate(['mess']);
+          break;
+        case 'Security':
+          this.router.navigate(['security']);
+          break;
+        case 'Warden':
+          this.router.navigate(['warden']);
+          break;
+        case 'Secretory':
+          this.router.navigate(['secretory']);
+          break;
+          case 'Admin':
+            this.router.navigate(['admin']);
+            break;
+      }
+    }
+  }
 }

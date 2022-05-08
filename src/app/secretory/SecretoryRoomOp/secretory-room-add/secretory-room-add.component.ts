@@ -22,6 +22,8 @@ export class SecretoryRoomAddComponent implements OnInit {
   formData : FormGroup;
   hostelList = null;
   wingList = null;
+  roomIds = null;
+  roomIDErrorMessage = null;
   noOfBeds = [
     {value : 1},
     {value : 2},
@@ -29,8 +31,16 @@ export class SecretoryRoomAddComponent implements OnInit {
   ]
 
   ngOnInit(): void {
+    this.getRoomIDs();
     this.getHotelList();
     this.loadForm();
+  }
+
+  getRoomIDs(){
+    this.secretoryService.getRoomIDs()
+    .subscribe(data => {
+      this.roomIds = data;
+    })
   }
 
   getHotelList(){
@@ -46,6 +56,7 @@ export class SecretoryRoomAddComponent implements OnInit {
     this.formData = this.fb.group({
       'HostelID' : new FormControl(null , [Validators.required]),
       'WingID' : new FormControl(null , [Validators.required]),
+      'RoomID' : new FormControl(null , [Validators.required , Validators.minLength(3)]),
       'NoOfBeds' : new FormControl(null , [Validators.required]),
       'Description' : new FormControl(null , [Validators.required])
     })
@@ -70,7 +81,16 @@ export class SecretoryRoomAddComponent implements OnInit {
   }
 
   onSave(){
-    if(this.formData.valid){
+    const roomID = this.formData.get('RoomID').value;
+    let flag = true;
+    this.roomIDErrorMessage = null;
+    for(let i = 0 ; i < this.roomIds.length ; i++){
+      if(this.roomIds[i].R === roomID){
+        flag = false;
+        this.roomIDErrorMessage = "Room ID " + roomID + " is already Exist."
+      }
+    }
+    if(this.formData.valid && flag){
       this.secretoryService.addRoom(this.formData.value)
       .subscribe(data => {
         alert(data);

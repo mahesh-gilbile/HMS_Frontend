@@ -2,6 +2,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, map } from 'rxjs/operators';
 import { AuthService } from 'src/app/auth/auth.service';
+import { StudentService } from '../../student.service';
 
 @Component({
   selector: 'app-student-side-nav',
@@ -13,7 +14,8 @@ export class StudentSideNavComponent implements OnInit {
   constructor(
     private activatedRoute : ActivatedRoute,
     private router : Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private studentService: StudentService
   ) { }
 
   public getScreenWidth:any;
@@ -32,9 +34,11 @@ export class StudentSideNavComponent implements OnInit {
   feesLogoWhite = "assets/Logo/Side-Nav Logo's/icons8-money-white.png";
   feesLogoBlack = "assets/Logo/Side-Nav Logo's/icons8-money-black.png";
   logoutLogo = "assets/Logo/Side-Nav Logo's/logout-black.png";
-  Qr_Scan = "assets/Logo/Side-Nav Logo's/QR_Scan.png";
+  QrScanBlack = "assets/Logo/Side-Nav Logo's/icons8-qr-code-black.png";
+  QrScanWhite = "assets/Logo/Side-Nav Logo's/icons8-qr-code-white.png";
 
   headerText:string;
+  stdAlt : boolean = false;
   ngOnInit(): void {
     this.onWindowResize();
     this.headerText = this.activatedRoute.firstChild.snapshot.data['title'];
@@ -50,6 +54,15 @@ export class StudentSideNavComponent implements OnInit {
       ).subscribe((ttl: string) => {
         this.headerText = ttl;
       });
+
+      this.studentService.checkStdAltAPI()
+      .subscribe(data => {
+        if(data === 'False'){
+          this.stdAlt = false;
+        }else{
+          this.stdAlt = true;
+        }
+      })
   }
 
   onLogout(){

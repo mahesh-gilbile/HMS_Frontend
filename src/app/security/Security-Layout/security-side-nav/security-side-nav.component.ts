@@ -20,6 +20,7 @@ export class SecuritySideNavComponent implements OnInit {
   staffWhite = "assets/Logo/Side-Nav Logo's/icons8-staff-white.png";
   qrBlack = "assets/Logo/Side-Nav Logo's/icons8-qr-code-black.png";
   qrWhite = "assets/Logo/Side-Nav Logo's/icons8-qr-code-white.png";
+
   logout = "assets/Logo/Side-Nav Logo's/logout-black.png";
 
   headerText:string;

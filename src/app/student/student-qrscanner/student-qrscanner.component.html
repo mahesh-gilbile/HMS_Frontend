@@ -12,17 +12,19 @@
   <div class="errorMessage" *ngIf="errorMessage">
     {{ errorMessage }}
   </div>
-  <div class="response" *ngIf="messResponseStatus">
-    <p>Hello {{ messResponseData.MessStaffName }}</p>
-    <p>Type :- {{ messResponseData.Type }}</p>
-    <p>Student Scan Time :- {{ messResponseData.Time }}</p>
-    <p>Student Scan Date :- {{ messResponseData.Date }}</p>
-  </div>
-  <div class="response" *ngIf="gateResponseStatus">
-    <p>QR Code is Generate by</p>
-    <p> SecurityGuard {{ gateResponseData.SecurityGuardName }}</p>
-    <p>Status :- {{ gateResponseData.Status }}</p>
-    <p>Your Scan Time :- {{ gateResponseData.Time.substring(0,8) }}</p>
-    <p>Your Scan Date :- {{ gateResponseData.Date }}</p>
-  </div>
+  <mat-card class="card1">
+    <div class="response" *ngIf="messResponseStatus">
+      <p>Hello {{ messResponseData.MessStaffName }}</p>
+      <p>Type :- {{ messResponseData.Type }}</p>
+      <p>Student Scan Time :- {{ messResponseData.Time }}</p>
+      <p>Student Scan Date :- {{ messResponseData.Date }}</p>
+    </div>
+    <div class="response" *ngIf="gateResponseStatus">
+      <p>QR Code is Generate by</p>
+      <p> SecurityGuard {{ gateResponseData.SecurityGuardName }}</p>
+      <p>Status :- {{ gateResponseData.Status }}</p>
+      <p>Your Scan Time :- {{ gateResponseData.Time.substring(0,8) }}</p>
+      <p>Your Scan Date :- {{ gateResponseData.Date }}</p>
+    </div>
+  </mat-card>
 </div>

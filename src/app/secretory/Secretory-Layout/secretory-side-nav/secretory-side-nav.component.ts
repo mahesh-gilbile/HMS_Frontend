@@ -26,6 +26,10 @@ export class SecretorySideNavComponent implements OnInit {
   feesLogoBlack = "assets/Logo/Side-Nav Logo's/icons8-money-black.png";
   roomLogoWhite = "assets/Logo/Side-Nav Logo's/icons8-room-white.png";
   roomLogoBlack = "assets/Logo/Side-Nav Logo's/icons8-room-black.png";
+  registerLogoWhite = "assets/Logo/Side-Nav Logo's/verify-white.png"
+  registerLogoBlack = "assets/Logo/Side-Nav Logo's/verify-black.png"
+  stdAltBlack = "assets/Logo/Side-Nav Logo's/resource-black.png"
+  stdAltWhite = "assets/Logo/Side-Nav Logo's/resource-white.png"
   logout = "assets/Logo/Side-Nav Logo's/logout-black.png";
   ngOnInit(): void {
     this.headerText = this.activatedRoute.firstChild.snapshot.data['title'];

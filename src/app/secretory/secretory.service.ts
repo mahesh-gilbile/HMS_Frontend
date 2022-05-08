@@ -105,4 +105,28 @@ export class SecretoryService{
     getAltInfo(id){
         return this.http.get<any>(BACKENDURL + 'roomDetailsForAlt/' + id);
     }
+
+    getNotAltStd(){
+        return this.http.get<any>(BACKENDURL + 'getNotAltStd');
+    }
+
+    updateRa(data){
+        return this.http.put<any>(BACKENDURL + 'updateRA' , data);
+    }
+
+    deleteRA(id){
+        return this.http.delete<any>(BACKENDURL + 'deleteRA/' + id)
+    }
+
+    addRA(data){
+        return this.http.post<any>(BACKENDURL + 'addRA', data);
+    }
+
+    altAllStd(){
+        return this.http.get<any>(BACKENDURL + 'allocateAll');
+    }
+
+    getRoomIDs(){
+        return this.http.get<any>(BACKENDURL + 'getRoomID');
+    }
 }

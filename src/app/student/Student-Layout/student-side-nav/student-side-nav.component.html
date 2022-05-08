@@ -13,10 +13,10 @@
       <li routerLink="guardian" routerLinkActive="active">
         <img src="{{ headerText === 'Guardian Information' ? guardianLogoBlack : guardianLogoWhite }}" alt="" class="logo">
       </li>
-      <li routerLink="room" routerLinkActive="active">
+      <li routerLink="room" routerLinkActive="active" *ngIf="stdAlt">
         <img src="{{ headerText === 'Room Details' ? roomLogoBlack : roomLogoWhite }}" alt="" class="logo">
       </li>
-      <li routerLink="mess" routerLinkActive="active">
+      <li routerLink="mess" routerLinkActive="active"  *ngIf="stdAlt">
         <img src="{{ headerText === 'Mess Details' ? messLogoBlack : messLogoWhite }}" alt="" class="logo">
       </li>
       <li routerLink="fees" routerLinkActive="active">
@@ -39,7 +39,7 @@
         <img src="{{ headerText === 'Guardian Information' ? guardianLogoBlack : guardianLogoWhite }}" alt="" class="logo">
       </li>
       <li routerLink="qrscanner" routerLinkActive="active">
-        <img src="{{ Qr_Scan }}" alt="" class="logo">
+        <img src="{{ headerText === 'QR Scanner' ? QrScanBlack : QrScanWhite }}" alt="" class="logo">
       </li>
       <li routerLink="room" routerLinkActive="active">
         <img src="{{ headerText === 'Room Details' ? roomLogoBlack : roomLogoWhite }}" alt="" class="logo">

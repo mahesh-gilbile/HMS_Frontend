@@ -23,6 +23,8 @@ export class WardenSideNavComponent implements OnInit {
   hostelInfoWhite = "assets/Logo/Side-Nav Logo's/icons8-info-white.png";
   leaveInfoBlack = "assets/Logo/Side-Nav Logo's/icons8-leave-black.png";
   leaveInfoWhite = "assets/Logo/Side-Nav Logo's/icons8-leave-white.png";
+  searchBlack = "assets/Logo/Side-Nav Logo's/magnifying-glass-Black.png";
+  searchWite = "assets/Logo/Side-Nav Logo's/magnifying-glass-White.png";
   logout = "assets/Logo/Side-Nav Logo's/logout-black.png";
 
 

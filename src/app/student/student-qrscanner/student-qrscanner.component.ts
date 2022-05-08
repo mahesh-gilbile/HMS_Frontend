@@ -151,7 +151,7 @@ export class StudentQRScannerComponent implements OnInit , OnDestroy {
       }else if(data.For === 'Gate Entry'){
         this.studenService.scanQRForGate(data)
         .subscribe(data => {
-          console.log(data);
+          // console.log(data);
           this.displayGateMessage(data);
         }, error => {
           // console.log(error);

@@ -19,7 +19,7 @@ export class AuthComponent implements OnInit {
   Login = ["Student" , "Mess" , "Security" , "Warden" , "Admin" , "Secretory"]
   loginUser = this.Login[0];
   ngOnInit(): void {
-    
+    this.authService.autoLogin();
   }
 
   Submit(f){

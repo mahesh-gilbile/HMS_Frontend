@@ -1,0 +1,16 @@
+<div class="outerDiv">
+    <div class="head">Select Student</div>
+    <hr style="border-top:1px solid lightgray">
+    <mat-card class="card1" *ngFor="let s of stdList">
+        <div class="checkDiv"><input type="radio" name="1" (click)="onChange(s)"></div>
+        <div class="nameDiv">{{ s.FN }} {{ s.MN }} {{ s.LN }}</div>
+        <div class="emailDiv">{{ s.Email }}</div>
+        <div class="mnDiv">{{ s.MobileNumber }}</div>
+    </mat-card>
+    <hr style="border-top:1px solid lightgray">
+    <div class="Message" *ngIf="stdData">Your Are Selected :- {{ stdData.FN }} {{ stdData.MN }} {{ stdData.LN }}</div>
+    <div class="btnDiv" *ngIf="selectStdID">
+          <button class="btn btn-primary" (click)="onSelect()" *ngIf="data.callby === 'Update'">Select Student</button>
+          <button class="btn btn-primary" (click)="onSelectAdd()" *ngIf="data.callby === 'Add'">Select Student</button>
+      </div>
+</div>

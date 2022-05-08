@@ -20,8 +20,7 @@
         <img src="{{ headerText === 'Leave Information' ? leaveInfoBlack : leaveInfoWhite}}" alt="" class="logo">
       </li>
       <li routerLink="stdList" routerLinkActive="active">
-        <!-- <img src="{{ headerText === 'Student List' ? leaveInfoBlack : leaveInfoWhite}}" alt="" class="logo"> -->
-        Search
+        <img src="{{ headerText === 'Student List' ? searchBlack : searchWite}}" alt="" class="logo">
       </li>
       <li routerLink="/auth" (click)="onLogout()">
         <img src="{{logout}}" alt="" class="logo">
